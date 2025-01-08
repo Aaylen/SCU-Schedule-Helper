@@ -1,0 +1,247 @@
+Professors Emeritus: Ronald L. Danielson, Daniel W. Lewis
+
+Professors: Ruth E. Davis, Silvia M. B. Figueira (Regis and Dianne McKenna Professor and Department Chair), Nam Ling (Wilmot J. Nicholson Family Professor)
+
+Associate Professors: Margareta Ackerman, Ahmed Amer, Darren C. Atkinson, Behnam Dezfouli, Yi Fang, Xiang Li, Ying Liu, Yuhong Liu, Weijia Shang
+
+Assistant Professors: David C. Anastasiu, Younghyun Cho, Sean Choi, I-Han Hsiao, Shiva Jahangiri, Kai Lukoff
+
+Lecturers: Salem Al-Agtash, Farokh H. Eskafi, Angela Musurlian
+
+The Department of Computer Science and Engineering offers major programs leading to the bachelor of science in computer science and engineering, or the bachelor of science in web design and engineering. The computer science and engineering program features a balanced core in which each student studies the engineering aspects of software and hardware as well as the mathematical foundations of computation. Computer science and engineering electives permit students to build on this core with varying emphasis, depending on their interests. The web design and engineering program combines a technical education in computing with courses in graphic art, communication, and sociology to enable its graduates to understand the engineering infrastructure of the Web, how the Web affects society, and how the ways in which society uses the Web create new demands on technology. Instruction and research in the department’s programs are supported by the facilities of the Engineering  Computing Center and the University’s Information Technology Center.
+
+Bachelor of Science in Computer Science and Engineering
+
+In addition to fulfilling the undergraduate Core Curriculum requirements for a bachelor of science degree in the engineering school, students majoring in computer science and engineering must complete a minimum of 192 units and the following departmental requirements (together with associated labs):
+
+English
+
+Mathematics and Natural Science
+
+*Pre-approved replacements for CHEM 11: AP Biology (score of 4 or 5), AP Environmental Science (score of 4 or 5), BIOL 18, 21, 22, CHEM 1, ENVS 21, and PHYS 34; pre-approved substitutions for AMTH 106: CHEM 12, MATH 101–178, or any CHEM 11 replacement (if not used to replace CHEM 11).
+
+Engineering
+
+Computer Science and Engineering Electives
+
+Note: 6 units of CSEN/COEN 193 or 4 units of CSEN/COEN 199 may be used as one elective, and at most one upper-division course from another department may be used as an elective, with advisor approval, and cannot also be used as a substitution for AMTH 106.
+
+Educational Enrichment Electives
+
+An educational enrichment experience selected from one of the following options:
+
+Bachelor of Science in Web Design and Engineering
+
+In addition to fulfilling the undergraduate Core Curriculum requirements for a bachelor of science degree in the engineering school, students majoring in web design and engineering must complete a minimum of 175 units and the following departmental requirements (together with associated labs):
+
+Arts, Humanities, and Social Science
+
+Mathematics and Natural Science
+
+Engineering
+
+Educational Enrichment Electives
+
+Students must fulfill the following requirements for a minor:
+
+Directors: Yi Fang and Susan Kennedy
+
+The Minor in Responsible AI is designed to provide students with the technical proficiency needed to develop AI systems and the ethical foundation to ensure AI is developed and deployed equitably, transparently, and for the broader good of society. This minor will bridge the gap between technology and ethics to equip students with a multifaceted understanding of the rapidly evolving world of artificial intelligence.
+
+All undergraduate students are eligible for the minor in Responsible Artificial Intelligence. Students must fulfill the following requirements for the minor; multiple options are available for these requirements, affording students a great deal of flexibility in completing the minor. Students should check the prerequisites of the classes and make sure they can be met before planning their schedule and/or registering for them.
+
+Computing Foundation:
+
+Select one of the following options:
+
+Technology Ethics. Select one of the following two courses.
+
+AI Ethics:
+
+AI Technology:
+
+Elective Courses (4 units minimum):
+
+The asterisk * indicates these courses cannot be used to satisfy university core requirements.
+
+The Department of Computer Science and Engineering offers a combined degree program leading to the bachelor of science and a master of science open to students pursuing an undergraduate degree at Santa Clara in computer science and engineering, web design and engineering, computer science, or electrical and computer engineering. Under this program, an undergraduate student begins taking courses required for a master’s degree before completing the requirements for the bachelor’s degree and typically completes the requirements for a master of science within a year of obtaining the bachelor’s degree.
+
+Undergraduate students admitted to the program may begin taking graduate courses no earlier than the fall term of their senior year, provided that both their overall GPA and their major GPA are at least 3.0. Students in this program will receive their bachelor’s degree after satisfying the standard undergraduate degree requirements. To earn the master’s degree, students must fulfill all the requirements for the degree, including the completion of 46 or more units of coursework beyond that applied to their bachelor’s degree.
+
+No course can be used to satisfy requirements for both the bachelor’s degree and the master’s degree. Completion of 12 or more units of courses in computer science and engineering taken for the master’s degree satisfies the Educational Enrichment requirement of the undergraduate program. Some courses required in the master’s degree programs may be replaced by free electives due to similar undergraduate coursework.
+
+The Sustainable Systems Laboratory (SSL) is dedicated to a computing-informed perspective on sustainability, and the complementary beliefs that just computing is sustainable, and sustainable computing is more than just computing. Via an initial focus on data storage technologies, it tackles both resilience and efficiency challenges to computing-related problems, and the application of systems-software concepts to broader societal and ethical questions.
+
+The Video and Image Processing Laboratory (VIP Lab) investigates state-of-the-art deep learning and signal processing techniques for image and video processing, visual data compression, visual coding for machine intelligence, and 3D point cloud coding.
+
+The Multimedia Visual Processing Laboratory (MVP Lab) supports research in image and video coding (compression and decompression) and processing with visual processing and deep learning methods.
+
+The Databases and Information Systems Laboratory (DBIS Lab)  focuses on research in designing, developing, and optimizing data management and information systems. Projects cover areas like database internals (query processing, execution engine, data storage), database architecture (including disaggregated architectures), as well as research in Knowledge Graphs and Semantic Web.
+
+The Cloud Laboratory focuses on research in designing, developing, and testing the next generation cloud-based systems and applications: (1) develop and utilize domain-specific hardware for cloud applications, and (2) optimizing existing systems to better serve new and coming applications that rely on the cloud, such as self-driving car, AI/ML/DL/LLM and serverless compute.
+
+The Systems & Performance Research Lab conducts research on system software (e.g., runtime systems and compilers) and performance tools (e.g., automatic tuning, profiling, and analysis) to improve the performance of software on parallel and high-performance computer systems.
+
+The Internet of Things (IoT) Research Laboratory (SIOTLAB) focuses on designing and developing intelligent sensing solutions, efficient and secure communication platforms and protocols, and seamless edge-to-cloud computing infrastructures that harness artificial intelligence to enhance systems' performance, decision-making, and operational efficiency.
+
+The Network Security and Optimization Laboratory focuses on using advanced algorithms and data-driven optimization techniques to solve security related problems in various real-world complex networks.
+
+The Trustworthy Computing Laboratory focuses on the security, privacy, and trust challenges and solutions for emerging distributed systems and networks, such as online social media, Internet-of-Things, Blockchain, and Distributed Energy Resource (DER)-based Equitable and Self-sustaining Clean Energy Ecosystem.
+
+The Data Science Laboratory is devoted to the extraction of knowledge from data and to the theory, design, and implementation of information systems to manage, retrieve, mine, and utilize data.
+
+The Responsible AI Laboratory aims to foster interdisciplinary research, promote ethical AI education, and cultivate partnerships that ensure AI advances are safe, equitable, transparent, and beneficial to the broader good of society.
+
+The Artificial Intelligence (AI) Laboratory conducts research across diverse facets of AI, including foundational and applied machine learning, and computational creativity, exploring the capabilities of AI systems to be autonomously creative as well as act as co-creative partners.
+
+The Machine Learning and Computational Genomics Laboratory focuses on algorithmic design for machine learning problems with real-world applications and impact, especially those with unconventional inputs, such as sparse data, sets of multivariate time series, video streams, and genomics and proteomics data.
+
+The Human-Computer Interaction Laboratory (HCI Lab) researches, designs, and develops technologies with social impact, with a focus on AR/VR, social computing, generative AI, and digital wellbeing.
+
+The Global Digital Transformation (GDT) Clinic focuses on helping social enterprises, non-profit organizations, and governmental programs that operate in low-resource areas embrace technology. This is done by designing, developing, and deploying customized web/mobile applications that can help them improve and/or scale their operation to better serve their beneficiaries.
+
+For details of faculty research areas, please see https://www.scu.edu/engineering/academic-programs/department-of-computer-engineering/research/
+
+Overview of computing. Introduction to program design and implementation: problem definition, functional decomposition, and design of algorithm programming in PHP and C: variables, data types, control constructs, arrays, strings, and functions. Program development in the Linux environment: editing, compiling, testing, and debugging. Credit is not allowed for more than one introductory class such as CSEN/COEN 10, CSCI 10, or OMIS 30. Corequisite: CSEN/COEN 10L. (4 units)
+
+Laboratory for CSEN/COEN 10. Corequisite: CSEN/COEN 10. (1 unit)
+
+The C Language: structure and style. Types, operators, and expressions. Control flow. Functions. Pointers, arrays, and strings. Structures and dynamic memory allocation. I/O and file processing. Special operators. Recursion and threads. The Unix environment. Prerequisites: Previous programming experience and/or a grade of C- or better in an introductory computer programming course such as CSEN/COEN 10, CSCI 10, or OMIS 30. Corequisite: CSEN/COEN 11L. (4 units)
+
+Laboratory for CSEN/COEN 11. Corequisite: CSEN/COEN 11. (1 unit)
+
+Data abstraction: abstract data types, information hiding, interface specification. Basic data structures: stacks, queues, lists, binary trees, hashing, tables, graphs; implementation of abstract data types in the C language. Internal sorting: review of selection, insertion, and exchange sorts; quicksort, heapsort; recursion. Analysis of run-time behavior of algorithms; Big-O notation. Introduction to classes in C++. Credit not allowed for more than one introductory data structures class, such as CSEN/COEN 12 or CSCI 61. Prerequisite: a grade of C- or better in CSEN/COEN 11. Corequisite: CSEN/COEN 12L. Recommended corequisite: CSEN/COEN 19 or MATH 51. (4 units)
+
+Laboratory for CSEN/COEN 12. Corequisite: CSEN/COEN 12. (1 unit)
+
+Predicate logic, methods of proof, sets, functions, sequences and summations, modular arithmetic, cardinality, induction, elementary combinatorial analysis, recursion, and relations. Also listed as MATH 51. (4 units)
+
+Introduction to computer organization: CPU, registers, buses, memory, I/O interfaces. Number systems: arithmetic and information representation. Assembly language programming: addressing techniques, arithmetic and logic operations, branching and looping, stack operations, procedure calls, parameter passing, and interrupts. C language programming: pointers, memory management, stack frames, interrupt processing. Prerequisite: a grade of C- or better in either CSEN/COEN 12 or CSCI 61. Corequisite: CSEN/COEN 20L. (4 units)
+
+Laboratory for CSEN/COEN 20. Corequisite: CSEN/COEN 20. (1 unit)
+
+Subjects of current interest. May be taken more than once if topics differ. (4 units)
+
+Overview of the internet and World Wide Web technologies and practices. Introduction to basic markup language, style sheet language, server-side scripting language, and website design. Emerging Web applications. Corequisite: CSEN 60L. (4 units)
+
+Laboratory for CSEN/COEN 60. Corequisite: CSEN/COEN 60. (1 unit)
+
+Object-oriented programming concepts; specification, design, and implementation of data structures with emphasis on software reliability and reusability; design and implementation of static and dynamic data structures, such as sequence, vector, list, stack, queue, deque, priority queue, set, multiset, map, multimap, and graphs; software development using inheritance, templates and iterators; memory allocation and performance; Using data structures in real-world applications; time analysis of data structures; informal use of specifications to guide implementation and validation of programs. Prerequisites: a grade of C- or better in either CSEN/COEN 12 or CSCI 61 and in either CSEN/COEN 19 or MATH 51. Corequisite: CSEN/COEN 79L. (4 units)
+
+Laboratory for CSEN/COEN 79. Corequisite: CSEN/COEN 79. (1 unit)
+
+Introduction to research in computing, covering several research areas. (1 unit)
+
+Overview of real-time systems: classification, design issues, and description. Finite state machines and statecharts. Robot programming: odometry and the use of sensors. Real-time programming languages, real-time kernels, and multi-threaded programming. Unified Modeling Language for the design of real-time applications. Performance analysis. Prerequisite: A grade of C- or better in either CSEN/COEN 12 or CSCI 61. Corequisite: CSEN/COEN 120L. (4 units)
+
+Laboratory for CSEN/COEN 120. Corequisite: CSEN/COEN 120. (1 unit)
+
+Overview of computer systems. Instruction set architecture. Quantitative analysis. Computer arithmetic. CPU datapath design. CPU control design. Pipelining. Data/control hazards. Memory hierarchies and management. Introduction of multiprocessor systems. Hardware description languages. Laboratory project consists of a design of a pipeline. Prerequisites: a grade of C- or better in either CSEN/COEN 20 or ECEN/ELEN 120 and in either CSEN/COEN 21 or ECEN/ELEN 21. Corequisite: CSEN/COEN 122L. (4 units)
+
+Laboratory for CSEN/COEN 122. Corequisite: CSEN/COEN 122. (1 unit)
+
+Introduction to behavior, design, and integration of electromechanical components and systems. Review of appropriate electronic components/circuitry, mechanism configurations, and programming constructs. Use and integration of transducers, microcontrollers, and actuators. Also listed as ECEN/ELEN 123 and MECH 143. Prerequisites: a grade of C- or better in ECEN/ELEN 50 and in CSEN/COEN 11. Corequisite: CSEN/COEN 123L. (4 units)
+
+Laboratory for CSEN/COEN 123. Corequisite: CSEN/COEN 123. Also listed as ECEN/ELEN 123L and MECH 143L. (1 unit)
+
+Contemporary design of finite-state machines as system controllers using FPGA devices. Minimization techniques, performance analysis, and modular system design. HDL simulation and synthesis. Also listed as ECEN/ELEN 127. Prerequisite: CSEN/COEN 21 with a grade of C- or better. Corequisite: CSEN/COEN 127L. (4 units)
+
+Laboratory for CSEN/COEN 127. Design, construction, and testing of controllers from verbal specs. Use of CAD design tools. Also listed as ECEN/ELEN 127L. Corequisite: CSEN/COEN 127. (1 unit)
+
+Subjects of current interest. May be taken more than once if topics differ. (4 units)
+
+Machine learning as a field has become increasingly pervasive, with applications from the Web (search, advertisements, and recommendation) to national security, from analyzing biochemical interactions to traffic and emissions to astrophysics. This course presents an introduction to machine learning and data mining, the study of computing systems that improve their performance through learning from data. This course is designed to cover the main principles, algorithms, and applications of machine learning and data mining. Prerequisites: a grade of C- or better in AMTH 108, in MATH 53, and in either CSEN/COEN 12 or CSCI 61. Corequisite: CSEN/COEN 140L. (4 units)
+
+Laboratory for CSEN/COEN 140. Corequisite: CSEN/COEN 140 (1 unit)
+
+Applications and architectures of IoT systems. Embedded and low-power processors. Interfacing digital sensors and actuators. Interrupts and exceptions in a concurrent world. Operating systems for resource-constrained devices. Multitasking and memory allocation. Wireless channel access, low-power wireless, real-time and reliable communication. IP networking, protocol translation and compression. Multi-hop communication. Application layer protocols. Security protocols and architectures. Cloud, edge, and fog computing. Prerequisites: a grade of C- or better in CSEN/COEN 146 and in CSEN/COEN 177. Corequisite: CSEN/COEN 143L. (4 units)
+
+Laboratory for CSEN/COEN 143. Corequisite: CSEN/COEN 143 (1 unit)
+
+How to effectively program parallel computers, from smartphones to large clusters. Types of parallel architectures, routing, data parallel, shared-memory, and message-passing parallel programming, load balancing, evaluation of parallel algorithms, advanced topics. Case studies in real-world data analytics, including parallel algorithms for sparse matrix and graph operations. Hands-on lab on multi-core CPUs and many-core GPUs. Prerequisite: a grade of C- or better in either CSEN/COEN 12 or CSCI 61. Corequisite: CSEN/COEN 145L. (4 units)
+
+Laboratory for CSEN/COEN 145. Corequisite: CSEN/COEN 145. (1 unit)
+
+Data communication: circuit and packet switching, latency and bandwidth, throughput/delay analysis. Application layer: client/server model, socket programming, Web, email, FTP. Transport layer: TCP and UDP, flow control, congestion control, sliding window techniques. Network layer: IP and routing. Data link layer: shared channels, media access control protocols, error detection and correction. Network security. Laboratory consists of projects on software development of network protocols and applications. Prerequisite: a grade of C- or better in either CSEN/COEN 12 or CSCI 61. Corequisite: CSEN/COEN 146L. Recommended corequisite or prerequisite: AMTH 108 or MATH 122. (4 units)
+
+Laboratory for CSEN/COEN 146. Corequisite: CSEN/COEN 146. (1 unit)
+
+Interactive graphic systems. Graphics primitives, line and shape generation. Simple transforming and modeling. Efficiency analysis and modular design. Interactive input techniques. Three-dimensional transformations and viewing, hidden surface removal. Color graphics, animation, real-time display considerations. Parametric surface definition and introduction to shaded-surface algorithms. Offered in alternate years. Prerequisites: MATH 53; a grade of C- or better in either CSEN/COEN 12 or CSCI 61. (4 units)
+
+Security principles; operating system security: process security, file system security, application program security; access control models: DAC, MAC, RBAC, ABAC; Malware: virus, Trojan, worms, rootkits, botnets, adware, spyware; network security attacks and defenses at different layers; web security: attacks on clients and servers; cryptographic basis: symmetric cryptography, public-key cryptography, cryptographic hash functions, digital signature; Application security: database security, email security, social networking security.   Prerequisite: a grade of C- or better in CSEN/COEN 146.  Corequisite: CSEN/COEN 150L (4 units)
+
+Laboratory for CSEN/COEN 150. Corequisite: CSEN/COEN 150. (1 unit)
+
+Procedures for identification, preservation, and extraction of electronic evidence. Auditing and investigation of network and host system intrusions, analysis and documentation of information gathered, and preparation of expert testimonial evidence. Forensic tools and resources for system administrators and information system security officers. Ethics, law, policy, and standards concerning digital evidence. Prerequisites: a grade of C- or better in either CSEN 12 or CSCI 61 and in CSEN/COEN 20. Corequisite: CSEN/COEN 152L. (4 units)
+
+Laboratory for CSEN/COEN 152. Corequisite: CSEN/COEN 152. (1 unit)
+
+Four important aspects of object-oriented application development are covered: fundamental concepts of the OO paradigm, building analysis and design models using UML, implementation using Java, and testing object-oriented systems. Prerequisite: a grade of C- or better in either CSEN/COEN 79 or CSCI 61. Corequisite: CSEN/COEN 160L. (4 units)
+
+Laboratory for CSEN/COEN 160. Corequisite: CSEN/COEN 160. (1 unit)
+
+Fundamentals of the World Wide Web (WWW) and the technologies that are required to develop Web-based applications. Topics cover HTML5, CSS, JavaScript, PHP, MYSQL and XML. Prerequisite: a grade of C- or better in either CSEN/COEN 12 or CSCI 61. Corequisite: CSEN/COEN 161L. (4 units)
+
+Laboratory for CSEN/COEN 161. Corequisite: CSEN/COEN 161. (1 unit)
+
+History and overview of World Wide Web technology. Web protocols. Web Navigation. Web caching and load balancing. P2P and Content Delivery Networks. Streaming technologies. Prerequisite: a grade of C- or better in CSEN/COEN 146. (4 units)
+
+Principles of user-centered design. Principles of human computer interaction. Fundamental theories in cognition and human factors: information processing, perception and representation, constructivist and ecological theories, Gestalt laws of perceptual organization. Usability engineering: user research, user profiling, method for evaluating user interface, usability testing. Prototyping in user interface: process, methods of evaluating and testing. Inclusive design in user interface design: accessibility issues, compliance with section 508 of Rehabilitation Act. Prerequisite: a grade of C- or better in either CSEN/COEN 12 or CSCI 61. Corequisite: CSEN/COEN 163L. (4 units)
+
+Laboratory for CSEN/COEN 163. Corequisite: CSEN/COEN 163. (1 unit)
+
+Advanced topics in Web Application Development; Development with Web Frameworks, implementing Web services and management of Web security. Prerequisite: a grade of C- or better in CSEN/COEN 161 or demonstrated knowledge of Web development technology covered in CSEN/COEN 161. Corequisite: CSEN/COEN 164L. (4 units)
+
+Laboratory for CSEN/COEN 164. Corequisite: CSEN/COEN 164. (1 unit)
+
+Mathematical and physical principles of motion of rigid bodies, including movement, acceleration, inertia, and collision. Modeling of rigid body dynamics for three-dimensional graphic simulation; controlling the motion of rigid bodies in robotic applications. May be repeated twice for credit. Also listed as ARTS 173. (5 units)
+
+Philosophical foundations of artificial intelligence, problem solving, knowledge and reasoning, neural networks, and other learning methods. Prerequisites: a grade of C- or better in either CSEN/COEN 12 or CSCI 61 and in either CSEN/COEN 19 or MATH 51. Corequisite: CSEN/COEN 166L. (4 units)
+
+Laboratory for CSEN/COEN 166. Corequisite: CSEN/COEN 166. (1 unit)
+
+Design and implementation of applications running on a mobile platform such as smartphones and tablets. Programming languages and development tools for mobile SDKs. Writing code for Peripherals-GPS, accelerometer, touchscreen. Optimizing user interface for a small screen. Effective memory management on a constrained device. Embedded graphics. Persistent data storage. Prerequisites: a grade of C- or better in CSEN/COEN 20 and in  CSEN/COEN 79 or equivalent. Corequisite: CSEN/COEN 168L. (4 units)
+
+Laboratory for CSEN/COEN 168. Corequisite: CSEN/COEN 168. (1 unit)
+
+Theory, design, and implementation of information systems that process, organize, analyze large-scale information on the Web. Search engine technology, recommender systems, cloud computing, social network analysis. Prerequisite: a grade of C- or better in either AMTH 108 or MATH 122 and in either CSEN/COEN 12 or CSCI 61, or permission of the instructor. (4 units)
+
+High-level programming language concepts and constructs. Costs of use and implementation of the constructs. Issues and trade-offs in the design and implementation of programming languages. Critical look at several modern high-level programming languages. Prerequisite: a grade of C- or better in CSEN/COEN 79. (4 units)
+
+Software development life cycle. Project teams, documentation, and group dynamics. Software cost estimation. Requirements engineering and design. Data modeling, object modeling, and object-oriented analysis. Object-oriented programming and design. Software testing and quality assurance. Software maintenance. Prerequisite: a grade of C- or better in either CSEN/COEN 12 or CSCI 61. Corequisite: CSEN/COEN 174L . (4 units)
+
+Laboratory for CSEN/COEN 174. Corequisite: CSEN/COEN 174. (1 unit)
+
+Introduction to formal language concepts: regular expressions and context-free grammars. Compiler organization and construction. Lexical analysis and implementation of scanners. Top-down and bottom-up parsing and implementation of top-down parsers. An overview of symbol table arrangement, run-time memory allocation, intermediate forms, optimization, and code generation. Prerequisites: a grade of C- or better in CSEN/COEN 20 and in CSEN/COEN 79. Corequisite: CSEN/COEN 175L. (4 units)
+
+Laboratory for CSEN/COEN 175. Corequisite: CSEN/COEN 175. (1 unit)
+
+Introduction to computer operating systems. Operating system concepts, computer organization model, storage hierarchy, operating system organization, processes management, interprocess communication and synchronization, memory management and virtual memory, I/O subsystems, and file systems. Design, implementation, and performance issues. Prerequisites: a grade of C- or better in either CSEN/COEN 12 or CSCI 61 and in CSEN/COEN 20 (or in ECEN/ELEN 120). Corequisite: CSEN/COEN 177L. (4 units)
+
+Laboratory for CSEN/COEN 177. Corequisite: CSEN/COEN 177. (1 unit)
+
+ER diagrams and the relational data model. Database design techniques based on integrity constraints and normalization. Database security and index structures. SQL and DDL. Transaction processing basics. Prerequisite: a grade of C- or better in either CSEN/COEN 12 or CSCI 61. Corequisite: CSEN/COEN 178L. (4 units)
+
+Laboratory for CSEN/COEN 178. Corequisite: CSEN/COEN 178. (1 unit)
+
+Introduction to techniques of design and analysis of algorithms: asymptotic notations and running times of recursive algorithms. Design strategies: brute-force, divide and conquer, decrease and conquer, transform and conquer, dynamic programming, greedy technique. Intractability: P and NP, approximation algorithms. Also listed as CSCI 163A. Prerequisites: a grade of C- or better in either CSEN/COEN 12 or CSCI 61 and in either CSEN/COEN 19 or MATH 51, or equivalents. (5 units)
+
+Storage hierarchy. Caching. Design of memory and storage devices, with particular emphasis on magnetic disks and storage-class memories. Error detection, correction and avoidance fundamentals. Disk arrays. Storage interfaces and buses. Network attached and distributed storage, interaction of economy and technological innovation. Also listed as ECEN/ELEN 180. Prerequisite: a grade of C- or better in either CSEN/COEN 12 or CSCI 61. Recommended prerequisite: CSEN/COEN 20. (4 units)
+
+Practical experience in a planned program designed to give students practical work experience related to their academic field of study and career objectives. Satisfactory completion of the work assignment includes preparation of a summary report on co-op activities. P/NP grading. May not be taken for graduate credit. (2 units)
+
+Credit given for a technical report on a specific activity such as a design or research project, etc., after completing the co-op assignment. Approval of department advisor required. Letter grades based on content and quality of report. May be taken twice. May not be taken for graduate credit. Prerequisite: CSEN/COEN 188. (2 units)
+
+Specification of an engineering project, selected with the mutual agreement of the student and the project advisor. Complete initial design with sufficient detail to estimate the effectiveness of the project. Initial draft of the project report. Prerequisite: senior standing. Corequisite: CSEN/COEN 194L. (1 units)
+
+Laboratory for CSEN/COEN 194. Corequisite: CSEN/COEN 194. (1 unit)
+
+Continued design and construction of the project, system, or device. Initial draft of project report. Prerequisite: CSEN/COEN 194. Corequisite: CSEN/COEN 195L. (1 units)
+
+Laboratory for CSEN/COEN 195. Corequisite: CSEN/COEN 195. (1 unit)
+
+Continued design and construction of the project, system, or device. Formal public presentation of results. Final report. Prerequisite: CSEN/COEN 195. Corequisite: CSEN/COEN 196L. (1 units)
+
+Laboratory for CSEN/COEN 196. Corequisite: CSEN/COEN 196. (1 unit)
+
+Special problems. By arrangement. (1–5 units)

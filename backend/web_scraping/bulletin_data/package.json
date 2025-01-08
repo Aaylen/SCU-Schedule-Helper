@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "name": "bulletin_data",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "jsdom": "^25.0.1",
+    "node-fetch": "^2.7.0",
+    "openai": "^4.77.3"
+  }
+}
