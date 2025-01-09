@@ -15,6 +15,9 @@ import {
   refreshUserData,
   updateUser,
 } from "./utils/user.js";
+import { OpenAIService } from '../../extension/components/chatComponents/openAIService.js'
+
+console.log('Service Worker Starting...');
 
 chrome.runtime.onInstalled.addListener((object) => {
   let internalUrl = chrome.runtime.getURL("landing_page/index.html");
@@ -162,5 +165,31 @@ async function handleFeedbackSubmission(data) {
       ok: false,
       message: "An unknown error occurred. Please try again later.",
     };
+  }
+}
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.type === 'chatMessage') {
+    handleChatMessage(request.message, request.threadId)
+      .then(response => sendResponse(response))
+      .catch(error => sendResponse({ error: error.message }));
+    return true;
+  }
+});
+
+async function handleChatMessage(message, threadId) {
+  try {
+    if (!threadId) {
+      threadId = await openAI.createThread();
+    }
+    
+    const response = await openAI.sendMessage(threadId, message);
+    return {
+      threadId: threadId,
+      message: response
+    };
+  } catch (error) {
+    console.error('Chat Error:', error);
+    throw error;
   }
 }
