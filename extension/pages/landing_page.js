@@ -179,7 +179,7 @@ export default function LandingPage() {
               <Typography variant="h6" sx={{ mb: 4 }}>
                 Ready to have a better experience registering for courses?
                 <br />
-                Sign in to access the extension
+                Sign in with your SCU email to access the extension
               </Typography>
 
               <Box sx={{ display: "flex", gap: 2 }}>

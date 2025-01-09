@@ -144,23 +144,3 @@ async function runStartupChecks() {
   // Check if we need to expire any interestedSections.
   await refreshInterestedSections();
 }
-
-async function handleFeedbackSubmission(data) {
-  try {
-    const response = await fetch(`${prodServerUrl}/feedback`, {
-      method: "POST",
-      body: JSON.stringify({ ...data }),
-    });
-    const responseData = await response.json();
-    return {
-      ok: response.ok,
-      message: responseData.message,
-    };
-  } catch (error) {
-    console.error("Error in handleFeedbackSubmission:", error);
-    return {
-      ok: false,
-      message: "An unknown error occurred. Please try again later.",
-    };
-  }
-}

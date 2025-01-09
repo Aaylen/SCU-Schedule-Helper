@@ -5,6 +5,7 @@ import Preferences from "../components/pageComponents/preferences";
 import Menu from "../components/Menu";
 import Friends from "../components/pageComponents/friends";
 import Profile from "../components/pageComponents/profile";
+import ChatBot from "../components/pageComponents/chatbot";
 
 export default function Home() {
   const [activePage, setActivePage] = useState("main");
@@ -50,6 +51,7 @@ export default function Home() {
         {activePage === "preferences" && <Preferences />}
         {activePage === "friends" && <Friends />}
         {activePage === "profile" && <Profile />}
+        {activePage === "chat" && <ChatBot />}
       </Box>
     </Box>
   );

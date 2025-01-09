@@ -11,6 +11,7 @@ import {
   Tune,
   PersonAdd,
   Close,
+  Chat, // Added Chat icon
 } from "@mui/icons-material";
 
 export const supportEmail = "swdean@scu.edu";
@@ -38,12 +39,18 @@ export default function Menu({ navigateToPage, openLandingPage }) {
       }
     });
   }, []);
+
   const menuItems = [
     { icon: <Search />, id: "main", action: () => navigateToPage("main") },
     {
       icon: <Tune />,
       id: "preferences",
       action: () => navigateToPage("preferences"),
+    },
+    {
+      icon: <Chat />, // Added Chat menu item
+      id: "chat",
+      action: () => navigateToPage("chat"),
     },
     {
       icon: <PersonAdd />,
@@ -103,13 +110,13 @@ export default function Menu({ navigateToPage, openLandingPage }) {
                 },
                 "&:hover::after, &.active::after": {
                   backgroundColor: "#703331",
-                  width: "calc(100% - 8px)", // Adjusted to match padding
+                  width: "calc(100% - 8px)",
                 },
                 "&::after": {
                   content: '""',
                   position: "absolute",
                   bottom: -2,
-                  left: "4px", // Matches horizontal padding
+                  left: "4px",
                   height: "2px",
                   width: 0,
                   backgroundColor: "transparent",
@@ -132,7 +139,7 @@ export default function Menu({ navigateToPage, openLandingPage }) {
                   marginRight: 1,
                   transition: "color 0.3s",
                   "&:hover, button:hover &": {
-                    color: "#703331", // Icon changes color on hover of the button or text
+                    color: "#703331",
                   },
                 }}
               />
@@ -142,15 +149,14 @@ export default function Menu({ navigateToPage, openLandingPage }) {
                   color: activeMenu === "home" ? "#703331" : "black",
                   fontWeight: "bold",
                   fontSize: { xs: "0.9rem", sm: "1rem" },
-                  // Removed hover underline effect for SCU Schedule Helper text
                   "&::after": {
                     content: '""',
                     position: "absolute",
                     bottom: -2,
-                    left: "4px", // Matches horizontal padding
-                    right: "4px", // Matches horizontal padding
+                    left: "4px",
+                    right: "4px",
                     height: "2px",
-                    backgroundColor: "transparent", // No underline on hover
+                    backgroundColor: "transparent",
                     width: 0,
                     transition: "background-color 0.3s, width 0.3s",
                   },
@@ -164,11 +170,11 @@ export default function Menu({ navigateToPage, openLandingPage }) {
           <Box
             sx={{
               display: "flex",
-              justifyContent: "space-evenly", // Ensures buttons are evenly spaced
+              justifyContent: "space-evenly",
               alignItems: "center",
               flexGrow: 1,
               minWidth: 0,
-              gap: "8px", // Added gap to create space between the icons
+              gap: "8px",
             }}
           >
             {menuItems.map((item) => (
@@ -176,7 +182,7 @@ export default function Menu({ navigateToPage, openLandingPage }) {
                 key={item.id}
                 sx={{
                   minWidth: "auto",
-                  padding: "4px 4px", // Adjusted horizontal padding
+                  padding: "4px 4px",
                   position: "relative",
                   color: "black",
                   "&:hover": {

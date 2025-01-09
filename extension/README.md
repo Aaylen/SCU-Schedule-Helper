@@ -4,6 +4,7 @@
     * Basically, just don't rename it unless you find a better solution to ignore the files in the build process.
 ## Install Dependencies
 Start by running `npm i`
+npm i --legacy-peer-deps in test/content_scripts
 
 ## Load the Extension
 1. Go to chrome://extensions

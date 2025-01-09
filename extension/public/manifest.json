@@ -8,11 +8,13 @@
     "storage",
     "identity",
     "notifications",
-    "scripting"
+    "scripting",
+    "https://api.openai.com/*"
   ],
   "host_permissions": [
     "https://www.myworkday.com/scu/*",
-    "https://www.ratemyprofessors.com/*"
+    "https://www.ratemyprofessors.com/*",
+    "https://api.openai.com/*"
   ],
   "web_accessible_resources": [
     {
@@ -63,5 +65,8 @@
       "https://www.googleapis.com/auth/userinfo.email",
       "https://www.googleapis.com/auth/userinfo.profile"
     ]
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://api.openai.com;"
   }
 }
