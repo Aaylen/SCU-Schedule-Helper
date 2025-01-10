@@ -21,24 +21,23 @@ const ChatInterface = () => {
   const [error, setError] = useState(null);
   const messagesEndRef = useRef(null);
 
-function checkServiceWorker() {
-  console.log('Checking service worker connection...');
-  
-  chrome.runtime.sendMessage({ type: 'ping' }, response => {
-    if (chrome.runtime.lastError) {
-      console.error('Service worker connection error:', chrome.runtime.lastError);
-      setError('Unable to connect to service worker: ' + chrome.runtime.lastError.message);
-      return;
-    }
-    checkServiceWorker();
+  function checkServiceWorker() {
+    console.log('Checking service worker connection...');
     
-    console.log('Service worker response:', response);
-  });
-}
+    chrome.runtime.sendMessage({ type: 'ping' }, response => {
+      if (chrome.runtime.lastError) {
+        console.error('Service worker connection error:', chrome.runtime.lastError);
+        setError('Unable to connect to service worker: ' + chrome.runtime.lastError.message);
+        return;
+      }
+      checkServiceWorker();
+      
+      console.log('Service worker response:', response);
+    });
+  }
 
   useEffect(() => {
     console.log('ChatInterface mounted');
-    // Load existing thread ID if any
     chrome.storage.local.get('chatThreadId', (result) => {
       console.log('Retrieved threadId from storage:', result.chatThreadId);
       if (result.chatThreadId) {
@@ -47,18 +46,6 @@ function checkServiceWorker() {
     });
   }, []);
 
-  useEffect(() => {
-    console.log('ChatInterface mounted');
-    // Load existing thread ID if any
-    chrome.storage.local.get('chatThreadId', (result) => {
-      console.log('Retrieved threadId from storage:', result.chatThreadId);
-      if (result.chatThreadId) {
-        setThreadId(result.chatThreadId);
-      }
-    });
-  }, []);
-
-  // Rest of the component remains the same...
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -69,63 +56,67 @@ function checkServiceWorker() {
   }, [messages]);
 
   const handleSend = async () => {
-  if (!input.trim()) return;
+    if (!input.trim()) return;
 
-  const userMessage = input.trim();
-  console.log('Sending message:', userMessage);
-  console.log('Current threadId:', threadId);
-  
-  setIsLoading(true);
-  setMessages(prev => [...prev, {
-    role: 'user',
-    content: userMessage,
-    timestamp: new Date()
-  }]);
-  setInput('');
-
-  try {
-    console.log('Sending message to service worker:', {
-      type: 'chatMessage',
-      message: userMessage,
-      threadId: threadId
-    });
+    const userMessage = input.trim();
+    console.log('Sending message:', userMessage);
+    console.log('Current threadId:', threadId);
     
-    const response = await new Promise((resolve, reject) => {
-      chrome.runtime.sendMessage({
-        type: 'chatMessage',
-        message: userMessage,
-        threadId: threadId
-      }, response => {
-        if (chrome.runtime.lastError) {
-          console.error('Message send error:', chrome.runtime.lastError);
-          reject(chrome.runtime.lastError);
-          return;
+    setIsLoading(true);
+    setMessages(prev => [...prev, {
+      role: 'user',
+      content: userMessage,
+      timestamp: new Date()
+    }]);
+    setInput('');
+
+    try {
+        const authToken = await chrome.storage.local.get('authToken');
+        if (!authToken.authToken) {
+            throw new Error('No authentication token available');
         }
-        console.log('Received response from SW:', response);
-        resolve(response);
-      });
-    });
+        
+        const response = await new Promise((resolve, reject) => {
+            chrome.runtime.sendMessage({
+                type: 'chatMessage',
+                message: userMessage,
+                threadId: threadId,
+                authorization: `Bearer ${authToken.authToken}`
+            }, response => {
+                if (chrome.runtime.lastError) {
+                    reject(chrome.runtime.lastError);
+                    return;
+                }
+                resolve(response);
+            });
+        });
 
-    if (response.error) {
-      throw new Error(response.error);
+        if (response.error) {
+            if (response.statusCode === 401) {
+                setError('Your session has expired. Please log in again.');
+                return;
+            }
+            throw new Error(response.error);
+        }
+
+        setThreadId(response.threadId);
+        chrome.storage.local.set({ chatThreadId: response.threadId });
+
+        setMessages(prev => [...prev, {
+            role: 'assistant',
+            content: response.message,
+            timestamp: new Date()
+        }]);
+    } catch (error) {
+        console.error('Chat Error:', error);
+        setMessages(prev => [...prev, {
+            role: 'assistant',
+            content: 'Sorry, there was an error processing your message: ' + error.message,
+            timestamp: new Date()
+        }]);
+    } finally {
+        setIsLoading(false);
     }
-
-    setThreadId(response.threadId);
-    setMessages(prev => [...prev, {
-      role: 'assistant',
-      content: response.message,
-      timestamp: new Date()
-    }]);
-  } catch (error) {
-    console.error('Chat Error:', error);
-    setMessages(prev => [...prev, {
-      role: 'assistant',
-      content: 'Sorry, there was an error processing your message: ' + error.message,
-      timestamp: new Date()
-    }]);
-  } finally {
-    setIsLoading(false);
-  }
 };
 
   const handleKeyPress = (event) => {

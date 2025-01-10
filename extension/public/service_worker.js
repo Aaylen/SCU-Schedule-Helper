@@ -161,67 +161,72 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
 export const API_ENDPOINT = 'https://e75pxrbdzb.execute-api.us-west-1.amazonaws.com/prod/post';
-const API_KEY = '8Me0pjzVAX8tYerhDqm4I7sH5MIb8EMU86BF7pyC'; //api gateway key
 
-async function handleChatMessage(message, threadId) {
-    console.log('API Endpoint:', API_ENDPOINT);
-    console.log('API Key:', API_KEY);
-    console.log('Request Payload:', { message, threadId });
+async function handleChatMessage(message, threadId, authorization) {
+    console.log('Processing chat message:', { message, threadId });
     
     try {
+        // Check for authorization header
+        if (!authorization) {
+            const authToken = await chrome.storage.local.get('authToken');
+            if (!authToken.authToken) {
+                throw new Error('No authorization token available');
+            }
+            authorization = `Bearer ${authToken.authToken}`;
+        }
+
         const response = await fetch(API_ENDPOINT, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-api-key': API_KEY, 
+                'Authorization': authorization
             },
-            body: JSON.stringify({ message, threadId }),
+            body: JSON.stringify({
+                message,
+                threadId
+            })
         });
 
         console.log('API Response Status:', response.status);
+        
+        if (response.status === 401) {
+            await chrome.storage.local.remove('authToken');
+            return {
+                error: 'Authentication failed - please log in again',
+                statusCode: 401
+            };
+        }
+
         if (!response.ok) {
-            const errorText = await response.text();
-            console.error('API Error Response:', errorText);
-            throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+            const errorData = await response.json();
+            throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
         }
 
         const jsonResponse = await response.json();
         console.log('API Response Data:', jsonResponse);
         return jsonResponse;
     } catch (error) {
-        console.error('Error in handleChatMessage:', error.message);
-        throw error;
+        console.error('Error in handleChatMessage:', error);
+        return {
+            error: error.message,
+            statusCode: error.statusCode || 500
+        };
     }
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.type === 'chatMessage') {
-        handleChatMessage(request.message, request.threadId)
+        handleChatMessage(request.message, request.threadId, request.authorization)
             .then(response => sendResponse(response))
-            .catch(error => sendResponse({ error: error.message }));
+            .catch(error => sendResponse({ 
+                error: error.message,
+                statusCode: error.statusCode || 500
+            }));
+        return true;
+    }
+
+    if (request.type === 'ping') {
+        sendResponse({ status: 'alive' });
         return true;
     }
 });
-
-
-
-(async () => {
-    try {
-        const response = await fetch(API_ENDPOINT, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': API_KEY,
-            },
-            body: JSON.stringify({ message: 'test', threadId: 'test123' }),
-        });
-
-        if (!response.ok) {
-            console.error('Direct Fetch Error:', await response.text());
-        } else {
-            console.log('Direct Fetch Success:', await response.json());
-        }
-    } catch (error) {
-        console.error('Error in Direct Fetch:', error.message);
-    }
-})();

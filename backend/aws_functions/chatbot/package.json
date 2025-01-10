@@ -4,6 +4,7 @@
   "description": "Lambda function for OpenAI Assistant chatbot",
   "main": "index.js",
   "dependencies": {
-    "openai": "^4.78.0"
+    "jsonwebtoken": "^9.0.2",
+    "openai": "^4.78.1"
   }
 }

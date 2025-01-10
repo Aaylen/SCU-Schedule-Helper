@@ -1,4 +1,63 @@
 const OpenAI = require('openai');
+const jwt = require('jsonwebtoken');
+
+const ERRORS = {
+  NO_HEADER: "no authorization header provided.",
+  BAD_HEADER: "authorization header must provide an issued access token.",
+  INVALID_TOKEN_TYPE: "invalid token type (expected access token)",
+  BAD_ACCESS_TOKEN: "could not verify access token",
+};
+
+function unauthorizedError(message) {
+  return {
+    statusCode: 401,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS'
+    },
+    body: JSON.stringify({ error: message })
+  };
+}
+
+async function handleWithAuthorization(event, context, handler) {
+  const userAuthorization = getUserAuthorization(event);
+  if (!userAuthorization.userId) {
+    return unauthorizedError(userAuthorization.authError);
+  }
+  return await handler(event, context, userAuthorization.userId);
+}
+
+function getUserAuthorization(event) {
+  if (!event || !event.headers || !event.headers.Authorization) {
+    return { authError: ERRORS.NO_HEADER };
+  }
+  const authorizationHeader = event.headers.Authorization;
+  const [authType, token] = authorizationHeader.split(' ');
+  
+  if (!token || authType !== 'Bearer') {
+    return {
+      authError: ERRORS.BAD_HEADER,
+    };
+  }
+  return verifyAccessToken(token);
+}
+
+function verifyAccessToken(accessToken) {
+  try {
+    const token = jwt.verify(accessToken, process.env.JWT_SECRET);
+    if (token.type !== 'access') {
+      return {
+        authError: ERRORS.INVALID_TOKEN_TYPE,
+      };
+    }
+    return { userId: token.sub };
+  } catch (error) {
+    return {
+      authError: `${ERRORS.BAD_ACCESS_TOKEN} (${error}).`,
+    };
+  }
+}
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
@@ -6,7 +65,7 @@ const openai = new OpenAI({
 
 const ASSISTANT_ID = process.env.ASSISTANT_ID;
 
-exports.handler = async (event) => {
+async function chatHandler(event, context, userId) {
   try {
     const body = JSON.parse(event.body);
     const { message, threadId } = body;
@@ -20,7 +79,8 @@ exports.handler = async (event) => {
     
     await openai.beta.threads.messages.create(currentThreadId, {
       role: 'user',
-      content: message
+      content: message,
+      metadata: { userId }
     });
     
     const run = await openai.beta.threads.runs.create(currentThreadId, {
@@ -43,7 +103,7 @@ exports.handler = async (event) => {
       statusCode: 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
         'Access-Control-Allow-Methods': 'POST, OPTIONS'
       },
       body: JSON.stringify({
@@ -57,11 +117,13 @@ exports.handler = async (event) => {
       statusCode: 500,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type'
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization'
       },
       body: JSON.stringify({
         error: error.message
       })
     };
   }
-};
+}
+
+exports.handler = (event, context) => handleWithAuthorization(event, context, chatHandler);
