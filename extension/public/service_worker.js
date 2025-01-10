@@ -160,38 +160,68 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 });
 
-const LAMBDA_ENDPOINT = 'arn:aws:lambda:us-west-1:100329216735:function:post_bulletinbot';
+export const API_ENDPOINT = 'https://e75pxrbdzb.execute-api.us-west-1.amazonaws.com/prod/post';
+const API_KEY = '8Me0pjzVAX8tYerhDqm4I7sH5MIb8EMU86BF7pyC'; //api gateway key
 
 async function handleChatMessage(message, threadId) {
-  try {
-    const response = await fetch(LAMBDA_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        message,
-        threadId
-      })
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
+    console.log('API Endpoint:', API_ENDPOINT);
+    console.log('API Key:', API_KEY);
+    console.log('Request Payload:', { message, threadId });
     
-    if (data.error) {
-      throw new Error(data.error);
-    }
+    try {
+        const response = await fetch(API_ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': API_KEY, 
+            },
+            body: JSON.stringify({ message, threadId }),
+        });
 
-    return {
-      threadId: data.threadId,
-      message: data.message
-    };
-  } catch (error) {
-    console.error('Chat handler error:', error);
-    throw error;
-  }
+        console.log('API Response Status:', response.status);
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('API Error Response:', errorText);
+            throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+        }
+
+        const jsonResponse = await response.json();
+        console.log('API Response Data:', jsonResponse);
+        return jsonResponse;
+    } catch (error) {
+        console.error('Error in handleChatMessage:', error.message);
+        throw error;
+    }
 }
 
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.type === 'chatMessage') {
+        handleChatMessage(request.message, request.threadId)
+            .then(response => sendResponse(response))
+            .catch(error => sendResponse({ error: error.message }));
+        return true;
+    }
+});
+
+
+
+(async () => {
+    try {
+        const response = await fetch(API_ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': API_KEY,
+            },
+            body: JSON.stringify({ message: 'test', threadId: 'test123' }),
+        });
+
+        if (!response.ok) {
+            console.error('Direct Fetch Error:', await response.text());
+        } else {
+            console.log('Direct Fetch Success:', await response.json());
+        }
+    } catch (error) {
+        console.error('Error in Direct Fetch:', error.message);
+    }
+})();

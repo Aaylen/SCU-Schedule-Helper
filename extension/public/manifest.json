@@ -9,12 +9,15 @@
     "identity",
     "notifications",
     "scripting",
-    "https://api.openai.com/"
+    "webRequest",
+    "webRequestBlocking"
   ],
+  
   "host_permissions": [
     "https://www.myworkday.com/scu/*",
     "https://www.ratemyprofessors.com/*",
-    "https://api.openai.com/*"
+    "https://api.openai.com/*",
+    "https://e75pxrbdzb.execute-api.us-west-1.amazonaws.com/*"
   ],
   "web_accessible_resources": [
     {
@@ -67,6 +70,6 @@
     ]
   },
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://api.openai.com;"
-  }
+  "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://e75pxrbdzb.execute-api.us-west-1.amazonaws.com https://api.openai.com"
+}
 }
