@@ -48,31 +48,14 @@ function checkServiceWorker() {
   }, []);
 
   useEffect(() => {
-    async function checkApiKey() {
-      console.log('Checking API configuration...');
-      try {
-        const result = await chrome.storage.local.get(['OPENAI_API_KEY', 'ASSISTANT_ID']);
-        console.log('API Key exists:', !!result.OPENAI_API_KEY);
-        console.log('Assistant ID exists:', !!result.ASSISTANT_ID);
-        
-        // Double check the actual values (careful not to log the actual API key!)
-        console.log('Storage result:', {
-          hasApiKey: !!result.OPENAI_API_KEY,
-          apiKeyLength: result.OPENAI_API_KEY ? result.OPENAI_API_KEY.length : 0,
-          assistantId: result.ASSISTANT_ID
-        });
-
-        if (!result.OPENAI_API_KEY || !result.ASSISTANT_ID) {
-          console.error('Missing API configuration');
-          setError('OpenAI API key or Assistant ID not configured. Please check your settings.');
-          
-        }
-      } catch (err) {
-        console.error('Error checking API configuration:', err);
-        setError('Error checking API configuration: ' + err.message);
+    console.log('ChatInterface mounted');
+    // Load existing thread ID if any
+    chrome.storage.local.get('chatThreadId', (result) => {
+      console.log('Retrieved threadId from storage:', result.chatThreadId);
+      if (result.chatThreadId) {
+        setThreadId(result.chatThreadId);
       }
-    }
-    checkApiKey();
+    });
   }, []);
 
   // Rest of the component remains the same...

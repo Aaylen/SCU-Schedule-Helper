@@ -144,3 +144,54 @@ async function runStartupChecks() {
   // Check if we need to expire any interestedSections.
   await refreshInterestedSections();
 }
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  
+  if (request.type === 'chatMessage') {
+    handleChatMessage(request.message, request.threadId)
+      .then(response => sendResponse(response))
+      .catch(error => sendResponse({ error: error.message }));
+    return true; 
+  }
+
+  if (request.type === 'ping') {
+    sendResponse({ status: 'alive' });
+    return true;
+  }
+
+});
+
+const LAMBDA_ENDPOINT = 'arn:aws:lambda:us-west-1:100329216735:function:post_bulletinbot';
+
+async function handleChatMessage(message, threadId) {
+  try {
+    const response = await fetch(LAMBDA_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message,
+        threadId
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    return {
+      threadId: data.threadId,
+      message: data.message
+    };
+  } catch (error) {
+    console.error('Chat handler error:', error);
+    throw error;
+  }
+}
+
