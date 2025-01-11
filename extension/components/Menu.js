@@ -57,14 +57,14 @@ export default function Menu({ navigateToPage, openLandingPage }) {
       action: () => navigateToPage("preferences"),
     },
     {
-      icon: <Chat />,
-      id: "chat",
-      action: () => navigateToPage("chat"),
-    },
-    {
       icon: <PersonAdd />,
       id: "friends",
       action: () => navigateToPage("friends"),
+    },
+    {
+      icon: <Chat />,
+      id: "chat",
+      action: () => navigateToPage("chat"),
     },
     {
       icon: <AccountCircle />,

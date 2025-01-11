@@ -54,6 +54,30 @@ function verifyAccessToken(accessToken) {
   }
 }
 
+function transformCitation(message) {
+  let processedMessage = message;
+  processedMessage = processedMessage.replace(/\.\s*Source:\s*([^.]+)\.?$/i, (match, url) => {
+    return `\n\nSource:\n${url.trim()}`;
+  });
+
+  processedMessage = processedMessage.replace(/【\d+:\d+†(.+?)】\.?/g, (match, filename) => {
+    let url = 'https://www.scu..edu/bulletin/undergraduate/';
+    filename = filename.replace(/_[a-f0-9]+\.txt$/, '');
+    filename = filename.replace(/_html$/, '');
+    const urlPath = filename
+      .replace(/www_scu_bulletin_undergraduate_/, '') 
+      .replace(/_/g, '/');
+
+    url += `${urlPath}`;
+
+    return `\n\nSource:\n${url}`;
+  });
+
+  processedMessage = processedMessage.replace(/Source:\s*([^\n]+)\.(?!html)(?:\s*|$)/g, 'Source:\n$1');
+
+  return processedMessage;
+}
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
@@ -93,12 +117,13 @@ async function chatHandler(event, context, userId) {
 
     const messages = await openai.beta.threads.messages.list(currentThreadId);
     const lastMessage = messages.data[0];
+    const transformedMessage = transformCitation(lastMessage.content[0].text.value);
 
     return {
       statusCode: 200,
       body: JSON.stringify({
         threadId: currentThreadId,
-        message: lastMessage.content[0].text.value
+        message: transformedMessage
       })
     };
   } catch (error) {
