@@ -1,4 +1,4 @@
-import { signIn, signOut } from "./utils/authorization.js";
+import { fetchWithAuth, signIn, signOut } from "./utils/authorization.js";
 import { prodServerUrl } from "./utils/constants.js";
 import {
   downloadEvals,
@@ -15,6 +15,7 @@ import {
   refreshUserData,
   updateUser,
 } from "./utils/user.js";
+import { prodChatEndpoint } from "./utils/constants.js";
 
 chrome.runtime.onInstalled.addListener((object) => {
   let internalUrl = chrome.runtime.getURL("landing_page/index.html");
@@ -160,26 +161,18 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 });
 
-export const API_ENDPOINT = 'https://e75pxrbdzb.execute-api.us-west-1.amazonaws.com/prod/post';
+
 
 async function handleChatMessage(message, threadId, authorization) {
     console.log('Processing chat message:', { message, threadId });
     
     try {
-        // Check for authorization header
-        if (!authorization) {
-            const authToken = await chrome.storage.local.get('authToken');
-            if (!authToken.authToken) {
-                throw new Error('No authorization token available');
-            }
-            authorization = `Bearer ${authToken.authToken}`;
-        }
+    
 
-        const response = await fetch(API_ENDPOINT, {
+        const response = await fetchWithAuth(prodChatEndpoint, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': authorization
             },
             body: JSON.stringify({
                 message,
@@ -188,14 +181,6 @@ async function handleChatMessage(message, threadId, authorization) {
         });
 
         console.log('API Response Status:', response.status);
-        
-        if (response.status === 401) {
-            await chrome.storage.local.remove('authToken');
-            return {
-                error: 'Authentication failed - please log in again',
-                statusCode: 401
-            };
-        }
 
         if (!response.ok) {
             const errorData = await response.json();

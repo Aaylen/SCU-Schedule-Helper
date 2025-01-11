@@ -1,0 +1,2 @@
+create a utils folder for authorization functionality
+model file will contain constant data structures

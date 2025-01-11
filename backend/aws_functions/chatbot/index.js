@@ -11,11 +11,6 @@ const ERRORS = {
 function unauthorizedError(message) {
   return {
     statusCode: 401,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS'
-    },
     body: JSON.stringify({ error: message })
   };
 }
@@ -29,12 +24,12 @@ async function handleWithAuthorization(event, context, handler) {
 }
 
 function getUserAuthorization(event) {
-  if (!event || !event.headers || !event.headers.Authorization) {
+  if (!event || !event.headers || !event.headers.authorization) {
     return { authError: ERRORS.NO_HEADER };
   }
-  const authorizationHeader = event.headers.Authorization;
+  const authorizationHeader = event.headers.authorization;
   const [authType, token] = authorizationHeader.split(' ');
-  
+
   if (!token || authType !== 'Bearer') {
     return {
       authError: ERRORS.BAD_HEADER,
@@ -69,24 +64,24 @@ async function chatHandler(event, context, userId) {
   try {
     const body = JSON.parse(event.body);
     const { message, threadId } = body;
-    
+
     let currentThreadId = threadId;
-    
+
     if (!currentThreadId) {
       const thread = await openai.beta.threads.create();
       currentThreadId = thread.id;
     }
-    
+
     await openai.beta.threads.messages.create(currentThreadId, {
       role: 'user',
       content: message,
       metadata: { userId }
     });
-    
+
     const run = await openai.beta.threads.runs.create(currentThreadId, {
       assistant_id: ASSISTANT_ID
     });
-    
+
     let runStatus = await openai.beta.threads.runs.retrieve(currentThreadId, run.id);
     while (runStatus.status !== 'completed') {
       if (runStatus.status === 'failed') {
@@ -95,17 +90,12 @@ async function chatHandler(event, context, userId) {
       await new Promise(resolve => setTimeout(resolve, 1000));
       runStatus = await openai.beta.threads.runs.retrieve(currentThreadId, run.id);
     }
-    
+
     const messages = await openai.beta.threads.messages.list(currentThreadId);
     const lastMessage = messages.data[0];
-    
+
     return {
       statusCode: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS'
-      },
       body: JSON.stringify({
         threadId: currentThreadId,
         message: lastMessage.content[0].text.value
@@ -115,10 +105,6 @@ async function chatHandler(event, context, userId) {
     console.error('Lambda error:', error);
     return {
       statusCode: 500,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-      },
       body: JSON.stringify({
         error: error.message
       })
@@ -126,4 +112,5 @@ async function chatHandler(event, context, userId) {
   }
 }
 
-exports.handler = (event, context) => handleWithAuthorization(event, context, chatHandler);
+let handler = (event, context) => handleWithAuthorization(event, context, chatHandler);
+module.exports = { handler }

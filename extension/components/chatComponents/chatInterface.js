@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import {
   Box,
   TextField,
@@ -8,38 +8,23 @@ import {
   CircularProgress,
   Container,
   Divider,
-  Alert
-} from '@mui/material';
-import SendIcon from '@mui/icons-material/Send';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+  Alert,
+} from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
 const ChatInterface = () => {
   const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [threadId, setThreadId] = useState(null);
   const [error, setError] = useState(null);
   const messagesEndRef = useRef(null);
 
-  function checkServiceWorker() {
-    console.log('Checking service worker connection...');
-    
-    chrome.runtime.sendMessage({ type: 'ping' }, response => {
-      if (chrome.runtime.lastError) {
-        console.error('Service worker connection error:', chrome.runtime.lastError);
-        setError('Unable to connect to service worker: ' + chrome.runtime.lastError.message);
-        return;
-      }
-      checkServiceWorker();
-      
-      console.log('Service worker response:', response);
-    });
-  }
-
   useEffect(() => {
-    console.log('ChatInterface mounted');
-    chrome.storage.local.get('chatThreadId', (result) => {
-      console.log('Retrieved threadId from storage:', result.chatThreadId);
+    console.log("ChatInterface mounted");
+    chrome.storage.local.get("chatThreadId", (result) => {
+      console.log("Retrieved threadId from storage:", result.chatThreadId);
       if (result.chatThreadId) {
         setThreadId(result.chatThreadId);
       }
@@ -47,11 +32,11 @@ const ChatInterface = () => {
   }, []);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
-    console.log('Messages updated:', messages.length);
+    console.log("Messages updated:", messages.length);
     scrollToBottom();
   }, [messages]);
 
@@ -59,106 +44,103 @@ const ChatInterface = () => {
     if (!input.trim()) return;
 
     const userMessage = input.trim();
-    console.log('Sending message:', userMessage);
-    console.log('Current threadId:', threadId);
-    
+    console.log("Sending message:", userMessage);
+    console.log("Current threadId:", threadId);
+
     setIsLoading(true);
-    setMessages(prev => [...prev, {
-      role: 'user',
-      content: userMessage,
-      timestamp: new Date()
-    }]);
-    setInput('');
+    setMessages((prev) => [
+      ...prev,
+      {
+        role: "user",
+        content: userMessage,
+        timestamp: new Date(),
+      },
+    ]);
+    setInput("");
 
     try {
-        const authToken = await chrome.storage.local.get('authToken');
-        if (!authToken.authToken) {
-            throw new Error('No authentication token available');
+      const response = await chrome.runtime.sendMessage({
+        type: "chatMessage",
+        message: userMessage,
+        threadId: threadId,
+      });
+
+      if (response.error) {
+        if (response.statusCode === 401) {
+          setError("Your session has expired. Please log in again.");
+          return;
         }
-        
-        const response = await new Promise((resolve, reject) => {
-            chrome.runtime.sendMessage({
-                type: 'chatMessage',
-                message: userMessage,
-                threadId: threadId,
-                authorization: `Bearer ${authToken.authToken}`
-            }, response => {
-                if (chrome.runtime.lastError) {
-                    reject(chrome.runtime.lastError);
-                    return;
-                }
-                resolve(response);
-            });
-        });
+        throw new Error(response.error);
+      }
 
-        if (response.error) {
-            if (response.statusCode === 401) {
-                setError('Your session has expired. Please log in again.');
-                return;
-            }
-            throw new Error(response.error);
-        }
+      setThreadId(response.threadId);
+      chrome.storage.local.set({ chatThreadId: response.threadId });
 
-        setThreadId(response.threadId);
-        chrome.storage.local.set({ chatThreadId: response.threadId });
-
-        setMessages(prev => [...prev, {
-            role: 'assistant',
-            content: response.message,
-            timestamp: new Date()
-        }]);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: response.message,
+          timestamp: new Date(),
+        },
+      ]);
     } catch (error) {
-        console.error('Chat Error:', error);
-        setMessages(prev => [...prev, {
-            role: 'assistant',
-            content: 'Sorry, there was an error processing your message: ' + error.message,
-            timestamp: new Date()
-        }]);
+      console.error("Chat Error:", error);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content:
+            "Sorry, there was an error processing your message: " +
+            error.message,
+          timestamp: new Date(),
+        },
+      ]);
     } finally {
-        setIsLoading(false);
+      setIsLoading(false);
     }
-};
+  };
 
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter' && !event.shiftKey) {
+    if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
       handleSend();
     }
   };
 
   const clearChat = () => {
-    console.log('Clearing chat history');
+    console.log("Clearing chat history");
     setMessages([]);
     setThreadId(null);
-    chrome.storage.local.remove('chatThreadId', () => {
-      console.log('ChatThreadId removed from storage');
+    chrome.storage.local.remove("chatThreadId", () => {
+      console.log("ChatThreadId removed from storage");
     });
   };
 
   return (
     <Container maxWidth="sm" disableGutters>
-      <Paper 
-        elevation={3} 
-        sx={{ 
-          height: '500px',
-          display: 'flex',
-          flexDirection: 'column',
-          overflow: 'hidden'
+      <Paper
+        elevation={3}
+        sx={{
+          height: "500px",
+          display: "flex",
+          flexDirection: "column",
+          overflow: "hidden",
         }}
       >
         {/* Header */}
-        <Box sx={{ 
-          p: 2, 
-          bgcolor: 'primary.main', 
-          color: 'primary.contrastText',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center'
-        }}>
-          <Typography variant="h6">
-            Chat Assistant
-          </Typography>
-          <IconButton 
+        <Box
+          sx={{
+            p: 2,
+            bgcolor: "primary.main",
+            color: "primary.contrastText",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Typography variant="h6">Chat Assistant</Typography>
+          <IconButton
             onClick={clearChat}
             color="inherit"
             size="small"
@@ -178,40 +160,46 @@ const ChatInterface = () => {
         )}
 
         {/* Messages Area */}
-        <Box sx={{ 
-          flexGrow: 1, 
-          overflow: 'auto',
-          p: 2,
-          bgcolor: 'grey.50',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 2
-        }}>
+        <Box
+          sx={{
+            flexGrow: 1,
+            overflow: "auto",
+            p: 2,
+            bgcolor: "grey.50",
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+          }}
+        >
           {messages.map((message, index) => (
             <Box
               key={index}
               sx={{
-                alignSelf: message.role === 'user' ? 'flex-end' : 'flex-start',
-                maxWidth: '80%'
+                alignSelf: message.role === "user" ? "flex-end" : "flex-start",
+                maxWidth: "80%",
               }}
             >
               <Paper
                 elevation={1}
                 sx={{
                   p: 1.5,
-                  bgcolor: message.role === 'user' ? 'primary.main' : 'background.paper',
-                  color: message.role === 'user' ? 'primary.contrastText' : 'text.primary'
+                  bgcolor:
+                    message.role === "user"
+                      ? "primary.main"
+                      : "background.paper",
+                  color:
+                    message.role === "user"
+                      ? "primary.contrastText"
+                      : "text.primary",
                 }}
               >
-                <Typography variant="body1">
-                  {message.content}
-                </Typography>
-                <Typography 
-                  variant="caption" 
-                  sx={{ 
-                    display: 'block',
+                <Typography variant="body1">{message.content}</Typography>
+                <Typography
+                  variant="caption"
+                  sx={{
+                    display: "block",
                     mt: 0.5,
-                    opacity: 0.8
+                    opacity: 0.8,
                   }}
                 >
                   {message.timestamp.toLocaleTimeString()}
@@ -220,7 +208,7 @@ const ChatInterface = () => {
             </Box>
           ))}
           {isLoading && (
-            <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }}>
+            <Box sx={{ display: "flex", justifyContent: "center", py: 2 }}>
               <CircularProgress size={24} />
             </Box>
           )}
@@ -230,8 +218,8 @@ const ChatInterface = () => {
         <Divider />
 
         {/* Input Area */}
-        <Box sx={{ p: 2, bgcolor: 'background.paper' }}>
-          <Box sx={{ display: 'flex', gap: 1 }}>
+        <Box sx={{ p: 2, bgcolor: "background.paper" }}>
+          <Box sx={{ display: "flex", gap: 1 }}>
             <TextField
               fullWidth
               multiline
@@ -242,13 +230,13 @@ const ChatInterface = () => {
               placeholder="Type your message..."
               disabled={isLoading}
               size="small"
-              sx={{ bgcolor: 'background.paper' }}
+              sx={{ bgcolor: "background.paper" }}
             />
             <IconButton
               color="primary"
               onClick={handleSend}
               disabled={isLoading || !input.trim()}
-              sx={{ alignSelf: 'flex-end' }}
+              sx={{ alignSelf: "flex-end" }}
             >
               <SendIcon />
             </IconButton>

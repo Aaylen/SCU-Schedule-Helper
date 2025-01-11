@@ -1,3 +1,4 @@
+npm install typescript (if you don't have typescript installed).
 To start: run `npm i --legacy-peer-deps` (the flag is important).
 
 To build, put your scripts in the scripts folder, and components in the components folder.
@@ -11,3 +12,4 @@ To test your script, run `npm run build` inside react_content_scripts, or `npm r
 Or, to build just the content scripts from the next-extension folder, run `npm run refreshcs` (this is the same as running npm run build inside react_content_scripts, just more convenient).
 
 Once you've built successfully, just refresh the extension and go to the desired page.
+
