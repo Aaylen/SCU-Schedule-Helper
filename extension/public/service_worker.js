@@ -161,14 +161,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 });
 
-
-
-async function handleChatMessage(message, threadId, authorization) {
+    
+  async function handleChatMessage(message, threadId, authorization) {
     console.log('Processing chat message:', { message, threadId });
     
     try {
-    
-
         const response = await fetchWithAuth(prodChatEndpoint, {
             method: 'POST',
             headers: {
@@ -176,7 +173,7 @@ async function handleChatMessage(message, threadId, authorization) {
             },
             body: JSON.stringify({
                 message,
-                threadId
+                threadId: undefined 
             })
         });
 

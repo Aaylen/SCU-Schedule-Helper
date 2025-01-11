@@ -9,6 +9,7 @@ import {
   Container,
   Divider,
   Alert,
+  Tooltip
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
@@ -17,18 +18,17 @@ const ChatInterface = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [threadId, setThreadId] = useState(null);
   const [error, setError] = useState(null);
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    console.log("ChatInterface mounted");
-    chrome.storage.local.get("chatThreadId", (result) => {
-      console.log("Retrieved threadId from storage:", result.chatThreadId);
-      if (result.chatThreadId) {
-        setThreadId(result.chatThreadId);
-      }
-    });
+    setMessages([
+      {
+        role: "assistant",
+        content: "Hi! I am a chatbot capable of referencing the SCU bulletin. How may I assist you today?",
+        timestamp: new Date(),
+      },
+    ]);
   }, []);
 
   const scrollToBottom = () => {
@@ -45,7 +45,6 @@ const ChatInterface = () => {
 
     const userMessage = input.trim();
     console.log("Sending message:", userMessage);
-    console.log("Current threadId:", threadId);
 
     setIsLoading(true);
     setMessages((prev) => [
@@ -62,7 +61,7 @@ const ChatInterface = () => {
       const response = await chrome.runtime.sendMessage({
         type: "chatMessage",
         message: userMessage,
-        threadId: threadId,
+        threadId: undefined,
       });
 
       if (response.error) {
@@ -72,9 +71,6 @@ const ChatInterface = () => {
         }
         throw new Error(response.error);
       }
-
-      setThreadId(response.threadId);
-      chrome.storage.local.set({ chatThreadId: response.threadId });
 
       setMessages((prev) => [
         ...prev,
@@ -111,10 +107,7 @@ const ChatInterface = () => {
   const clearChat = () => {
     console.log("Clearing chat history");
     setMessages([]);
-    setThreadId(null);
-    chrome.storage.local.remove("chatThreadId", () => {
-      console.log("ChatThreadId removed from storage");
-    });
+    setError(null);
   };
 
   return (
@@ -122,50 +115,65 @@ const ChatInterface = () => {
       <Paper
         elevation={3}
         sx={{
-          height: "500px",
+          height: "400px",
           display: "flex",
           flexDirection: "column",
           overflow: "hidden",
+          border: "1px solid rgba(112, 51, 49, 0.2)",
         }}
       >
-        {/* Header */}
         <Box
           sx={{
             p: 2,
-            bgcolor: "primary.main",
-            color: "primary.contrastText",
+            bgcolor: "#703331",
+            color: "white",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
           }}
         >
-          <Typography variant="h6">Chat Assistant</Typography>
-          <IconButton
-            onClick={clearChat}
-            color="inherit"
-            size="small"
-            title="Clear chat"
-          >
-            <DeleteOutlineIcon />
-          </IconButton>
+          <Typography variant="h6" sx={{ fontWeight: 500 }}>
+            Chat Assistant
+          </Typography>
+          <Tooltip title="Clear chat" arrow placement="left">
+            <IconButton
+              onClick={clearChat}
+              color="inherit"
+              size="small"
+              sx={{ 
+                '&:hover': { 
+                  bgcolor: 'rgba(255, 255, 255, 0.1)' 
+                } 
+              }}
+            >
+              <DeleteOutlineIcon />
+            </IconButton>
+          </Tooltip>
         </Box>
 
         <Divider />
 
-        {/* Error message */}
         {error && (
-          <Alert severity="error" onClose={() => setError(null)}>
+          <Alert 
+            severity="error" 
+            onClose={() => setError(null)}
+            sx={{ 
+              borderRadius: 0,
+              '& .MuiAlert-icon': {
+                color: '#703331'
+              }
+            }}
+          >
             {error}
           </Alert>
         )}
 
-        {/* Messages Area */}
         <Box
           sx={{
             flexGrow: 1,
             overflow: "auto",
             p: 2,
-            bgcolor: "grey.50",
+            bgcolor: "#fafafa",
             display: "flex",
             flexDirection: "column",
             gap: 2,
@@ -183,23 +191,30 @@ const ChatInterface = () => {
                 elevation={1}
                 sx={{
                   p: 1.5,
-                  bgcolor:
-                    message.role === "user"
-                      ? "primary.main"
-                      : "background.paper",
-                  color:
-                    message.role === "user"
-                      ? "primary.contrastText"
-                      : "text.primary",
+                  bgcolor: message.role === "user" ? "#703331" : "white",
+                  color: message.role === "user" ? "white" : "#2c2c2c",
+                  borderRadius: 2,
+                  boxShadow: message.role === "user" 
+                    ? "0 2px 4px rgba(112, 51, 49, 0.2)"
+                    : "0 2px 4px rgba(0, 0, 0, 0.1)",
                 }}
               >
-                <Typography variant="body1">{message.content}</Typography>
+                <Typography 
+                  variant="body1" 
+                  sx={{ 
+                    whiteSpace: "pre-wrap",
+                    wordBreak: "break-word"
+                  }}
+                >
+                  {message.content}
+                </Typography>
                 <Typography
                   variant="caption"
                   sx={{
                     display: "block",
                     mt: 0.5,
                     opacity: 0.8,
+                    fontSize: "0.75rem",
                   }}
                 >
                   {message.timestamp.toLocaleTimeString()}
@@ -209,7 +224,12 @@ const ChatInterface = () => {
           ))}
           {isLoading && (
             <Box sx={{ display: "flex", justifyContent: "center", py: 2 }}>
-              <CircularProgress size={24} />
+              <CircularProgress 
+                size={24} 
+                sx={{ 
+                  color: '#703331'
+                }}
+              />
             </Box>
           )}
           <div ref={messagesEndRef} />
@@ -217,8 +237,13 @@ const ChatInterface = () => {
 
         <Divider />
 
-        {/* Input Area */}
-        <Box sx={{ p: 2, bgcolor: "background.paper" }}>
+        <Box 
+          sx={{ 
+            p: 2, 
+            bgcolor: "white",
+            borderTop: "1px solid rgba(112, 51, 49, 0.1)" 
+          }}
+        >
           <Box sx={{ display: "flex", gap: 1 }}>
             <TextField
               fullWidth
@@ -230,13 +255,32 @@ const ChatInterface = () => {
               placeholder="Type your message..."
               disabled={isLoading}
               size="small"
-              sx={{ bgcolor: "background.paper" }}
+              sx={{
+                bgcolor: "white",
+                '& .MuiOutlinedInput-root': {
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#703331',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: 'rgba(112, 51, 49, 0.5)',
+                  },
+                },
+              }}
             />
             <IconButton
               color="primary"
               onClick={handleSend}
               disabled={isLoading || !input.trim()}
-              sx={{ alignSelf: "flex-end" }}
+              sx={{ 
+                alignSelf: "flex-end",
+                color: '#703331',
+                '&:hover': {
+                  bgcolor: 'rgba(112, 51, 49, 0.1)',
+                },
+                '&.Mui-disabled': {
+                  color: 'rgba(112, 51, 49, 0.3)',
+                }
+              }}
             >
               <SendIcon />
             </IconButton>

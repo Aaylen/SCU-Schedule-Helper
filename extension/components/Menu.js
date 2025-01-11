@@ -11,7 +11,7 @@ import {
   Tune,
   PersonAdd,
   Close,
-  Chat, // Added Chat icon
+  Chat,
 } from "@mui/icons-material";
 
 export const supportEmail = "swdean@scu.edu";
@@ -23,8 +23,7 @@ export default function Menu({ navigateToPage, openLandingPage }) {
   useEffect(() => {
     async function updateFriendNotificationCount() {
       try {
-        const { friendRequestsIn } =
-          await chrome.storage.local.get("friendRequestsIn");
+        const { friendRequestsIn } = await chrome.storage.local.get("friendRequestsIn");
         if (!friendRequestsIn) return;
         setFriendNotificationCount(Object.values(friendRequestsIn).length);
       } catch (error) {
@@ -41,14 +40,24 @@ export default function Menu({ navigateToPage, openLandingPage }) {
   }, []);
 
   const menuItems = [
-    { icon: <Search />, id: "main", action: () => navigateToPage("main") },
+    { 
+      icon: <Home />, 
+      id: "home", 
+      label: "SCU Helper",
+      action: () => openLandingPage() 
+    },
+    { 
+      icon: <Search />, 
+      id: "main", 
+      action: () => navigateToPage("main") 
+    },
     {
       icon: <Tune />,
       id: "preferences",
       action: () => navigateToPage("preferences"),
     },
     {
-      icon: <Chat />, // Added Chat menu item
+      icon: <Chat />,
       id: "chat",
       action: () => navigateToPage("chat"),
     },
@@ -62,15 +71,16 @@ export default function Menu({ navigateToPage, openLandingPage }) {
       id: "profile",
       action: () => navigateToPage("profile"),
     },
+    {
+      icon: <Close />,
+      id: "close",
+      action: () => window.close(),
+    },
   ];
 
   useEffect(() => {
     setActiveMenu("main");
   }, []);
-
-  function handleClose() {
-    window.close();
-  }
 
   return (
     <Box sx={{ mb: 1 }}>
@@ -82,98 +92,13 @@ export default function Menu({ navigateToPage, openLandingPage }) {
           borderBottom: "2px solid #d1d1d1",
         }}
       >
-        <Toolbar
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            backgroundColor: "white",
-          }}
-        >
+        <Toolbar>
           <Box
             sx={{
               display: "flex",
+              justifyContent: "space-between",
               alignItems: "center",
-              flexGrow: 1,
-              minWidth: 0,
-            }}
-          >
-            <Button
-              sx={{
-                position: "relative",
-                color: "black",
-                display: "flex",
-                alignItems: "center",
-                padding: "4px 4px",
-                "&:hover": {
-                  backgroundColor: "#f0f0f0",
-                },
-                "&:hover::after, &.active::after": {
-                  backgroundColor: "#703331",
-                  width: "calc(100% - 8px)",
-                },
-                "&::after": {
-                  content: '""',
-                  position: "absolute",
-                  bottom: -2,
-                  left: "4px",
-                  height: "2px",
-                  width: 0,
-                  backgroundColor: "transparent",
-                  transition: "background-color 0.3s, width 0.3s",
-                },
-                whiteSpace: "nowrap",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-              }}
-              onClick={() => {
-                setActiveMenu("home");
-                openLandingPage();
-              }}
-              className={activeMenu === "home" ? "active" : ""}
-            >
-              <Home
-                sx={{
-                  fontSize: 24,
-                  color: activeMenu === "home" ? "#703331" : "#d1d1d1",
-                  marginRight: 1,
-                  transition: "color 0.3s",
-                  "&:hover, button:hover &": {
-                    color: "#703331",
-                  },
-                }}
-              />
-              <Box
-                sx={{
-                  position: "relative",
-                  color: activeMenu === "home" ? "#703331" : "black",
-                  fontWeight: "bold",
-                  fontSize: { xs: "0.9rem", sm: "1rem" },
-                  "&::after": {
-                    content: '""',
-                    position: "absolute",
-                    bottom: -2,
-                    left: "4px",
-                    right: "4px",
-                    height: "2px",
-                    backgroundColor: "transparent",
-                    width: 0,
-                    transition: "background-color 0.3s, width 0.3s",
-                  },
-                }}
-              >
-                SCU Schedule Helper
-              </Box>
-            </Button>
-          </Box>
-
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-evenly",
-              alignItems: "center",
-              flexGrow: 1,
-              minWidth: 0,
+              width: "100%",
               gap: "8px",
             }}
           >
@@ -181,10 +106,12 @@ export default function Menu({ navigateToPage, openLandingPage }) {
               <Button
                 key={item.id}
                 sx={{
-                  minWidth: "auto",
-                  padding: "4px 4px",
+                  minWidth: item.label ? "80px" : "40px",
+                  padding: "4px",
                   position: "relative",
                   color: "black",
+                  display: "flex",
+                  alignItems: "center",
                   "&:hover": {
                     backgroundColor: "#f0f0f0",
                     "& .menu-icon": {
@@ -236,58 +163,34 @@ export default function Menu({ navigateToPage, openLandingPage }) {
                     })}
                   </Badge>
                 ) : (
-                  React.cloneElement(item.icon, {
-                    className: "menu-icon",
-                    sx: {
-                      fontSize: 24,
-                      color: activeMenu === item.id ? "#703331" : "#d1d1d1",
-                      transition: "color 0.3s",
-                    },
-                  })
+                  <>
+                    {React.cloneElement(item.icon, {
+                      className: "menu-icon",
+                      sx: {
+                        fontSize: 24,
+                        color: activeMenu === item.id ? "#703331" : "#d1d1d1",
+                        transition: "color 0.3s",
+                      },
+                    })}
+                    {item.label && (
+                      <Box
+                        sx={{
+                          ml: 0.5,
+                          color: activeMenu === item.id ? "#703331" : "black",
+                          fontWeight: "bold",
+                          fontSize: "0.7rem",
+                          whiteSpace: "nowrap",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                        }}
+                      >
+                        {item.label}
+                      </Box>
+                    )}
+                  </>
                 )}
               </Button>
             ))}
-          </Box>
-
-          <Box>
-            <Button
-              onClick={handleClose}
-              sx={{
-                minWidth: "auto",
-                color: "#703331",
-                padding: "4px 8px",
-                position: "relative",
-                "&:hover": {
-                  backgroundColor: "#f0f0f0",
-                  "& .MuiSvgIcon-root": {
-                    color: "#703331",
-                  },
-                  "&::after": {
-                    backgroundColor: "#703331",
-                    width: "100%",
-                  },
-                },
-                "&::after": {
-                  content: '""',
-                  position: "absolute",
-                  bottom: -2,
-                  left: 0,
-                  right: 0,
-                  height: "2px",
-                  width: 0,
-                  backgroundColor: "transparent",
-                  transition: "background-color 0.3s, width 0.3s",
-                },
-              }}
-            >
-              <Close
-                sx={{
-                  fontSize: 24,
-                  color: "#d1d1d1",
-                  transition: "color 0.3s",
-                }}
-              />
-            </Button>
           </Box>
         </Toolbar>
       </AppBar>
