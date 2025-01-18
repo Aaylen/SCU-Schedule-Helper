@@ -56,24 +56,30 @@ function verifyAccessToken(accessToken) {
 
 function transformCitation(message) {
   let processedMessage = message;
+  
   processedMessage = processedMessage.replace(/\.\s*Source:\s*([^.]+)\.?$/i, (match, url) => {
-    return `\n\nSource:\n${url.trim()}`;
+    let normalizedUrl = url.trim().replace(/\s+/g, '/');
+    return `\nSource:\n${normalizedUrl}`;
   });
-
   processedMessage = processedMessage.replace(/【\d+:\d+†(.+?)】\.?/g, (match, filename) => {
-    let url = 'https://www.scu..edu/bulletin/undergraduate/';
-    filename = filename.replace(/_[a-f0-9]+\.txt$/, '');
-    filename = filename.replace(/_html$/, '');
+    let baseUrl = 'https://www.scu.edu/bulletin/undergraduate/';
+    
+    filename = filename.replace(/_[a-f0-9]+\.txt$/, '')
+                      .replace(/_html$/, '');
     const urlPath = filename
-      .replace(/www_scu_bulletin_undergraduate_/, '') 
-      .replace(/_/g, '/');
-
-    url += `${urlPath}`;
-
-    return `\n\nSource:\n${url}`;
+      .replace(/www_scu_bulletin_undergraduate_/, '')
+      .replace(/_/g, '/')
+      .replace(/\s+/g, '-') 
+      .replace(/\/{2,}/g, '/');
+    const finalUrl = baseUrl + (urlPath.startsWith('/') ? urlPath.substring(1) : urlPath);
+    
+    return `\nSource:\n${finalUrl}`;
   });
 
-  processedMessage = processedMessage.replace(/Source:\s*([^\n]+)\.(?!html)(?:\s*|$)/g, 'Source:\n$1');
+  processedMessage = processedMessage.replace(/Source:\s*([^\n]+?)\.?(?:\s*|$)/g, (match, url) => {
+    let normalizedUrl = url.trim().replace(/\s+/g, '/').replace(/\/{2,}/g, '/');
+    return `\nSource:\n${normalizedUrl}`;
+  });
 
   return processedMessage;
 }
