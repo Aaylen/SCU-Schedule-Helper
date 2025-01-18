@@ -44,8 +44,6 @@ const ChatInterface = () => {
     if (!input.trim()) return;
 
     const userMessage = input.trim();
-    console.log("Sending message:", userMessage);
-
     setIsLoading(true);
     setMessages((prev) => [
       ...prev,
@@ -72,23 +70,24 @@ const ChatInterface = () => {
         throw new Error(response.error);
       }
 
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: response.message,
-          timestamp: new Date(),
-        },
-      ]);
+      // For streaming responses
+      if (response.type === 'final') {
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content: response.content,
+            timestamp: new Date(),
+          },
+        ]);
+      }
     } catch (error) {
       console.error("Chat Error:", error);
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content:
-            "Sorry, there was an error processing your message: " +
-            error.message,
+          content: "Sorry, there was an error processing your message: " + error.message,
           timestamp: new Date(),
         },
       ]);

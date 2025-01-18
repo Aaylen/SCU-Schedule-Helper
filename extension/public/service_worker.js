@@ -162,38 +162,84 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
     
-  async function handleChatMessage(message, threadId, authorization) {
-    console.log('Processing chat message:', { message, threadId });
-    
-    try {
-        const response = await fetchWithAuth(prodChatEndpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                message,
-                threadId: undefined 
-            })
-        });
+  async function handleChatMessage(message, threadId) {
+  console.log('Processing chat message:', { message, threadId });
+  
+  try {
+    const response = await fetchWithAuth(prodChatEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message,
+        threadId
+      })
+    });
 
-        console.log('API Response Status:', response.status);
-
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
-        }
-
-        const jsonResponse = await response.json();
-        console.log('API Response Data:', jsonResponse);
-        return jsonResponse;
-    } catch (error) {
-        console.error('Error in handleChatMessage:', error);
-        return {
-            error: error.message,
-            statusCode: error.statusCode || 500
-        };
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
     }
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+
+    return new Promise((resolve, reject) => {
+      function processText(text) {
+        const lines = text.split('\n');
+        buffer += lines[0];
+        
+        if (lines.length >= 2) {
+          const message = buffer.replace(/^data: /, '');
+          buffer = lines[lines.length - 1];
+          
+          if (message) {
+            try {
+              return JSON.parse(message);
+            } catch (e) {
+              console.error('Error parsing message:', message, e);
+            }
+          }
+        }
+        return null;
+      }
+
+      async function pump() {
+        try {
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            
+            const text = decoder.decode(value);
+            const result = processText(text);
+            
+            if (result) {
+              if (result.type === 'error') {
+                reject(new Error(result.error));
+                return;
+              }
+              if (result.type === 'final') {
+                resolve(result);
+                return;
+              }
+            }
+          }
+        } catch (error) {
+          reject(error);
+        }
+      }
+
+      pump();
+    });
+  } catch (error) {
+    console.error('Error in handleChatMessage:', error);
+    return {
+      error: error.message,
+      statusCode: error.statusCode || 500
+    };
+  }
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {

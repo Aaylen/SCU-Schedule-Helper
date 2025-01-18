@@ -17,7 +17,7 @@
     "https://www.myworkday.com/scu/*",
     "https://www.ratemyprofessors.com/*",
     "https://api.openai.com/*",
-    "https://e75pxrbdzb.execute-api.us-west-1.amazonaws.com/*"
+    "https://btjoo62kfomp42q2pfb6smceuq0qfvyk.lambda-url.us-west-1.on.aws/"
   ],
   "web_accessible_resources": [
     {
