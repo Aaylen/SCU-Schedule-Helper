@@ -1,0 +1,249 @@
+Professors Emeritus/a: Timothy J. Healy, Dragoslav D. Siljak, Sarah Kate Wilson,
+
+Thomas J. Bannan Professor: Shoba Krishnan (Chair)
+
+Professors: Tokunbo Ogunfunmi, Sally Wood, Cary Y. Yang, Aleksandar Zecevic
+
+Associate Professors: Maryam Khanbaghi, M. Mahmudur Rahman, Hoeseok Yang
+
+Assistant Professors: Anoosheh Heidarzadeh, Maria Kyrarini, Kurt Schab, Dat Tran, S.J.
+
+The Electrical and Computer Engineering Department offers major programs leading to the bachelor of science in electrical  engineering or the bachelor of science in electrical and computer engineering, as well as required and elective courses for students majoring in other fields.
+
+Electrical and computer engineering includes the broad range of design, construction, and operation of electrical components, circuits, and systems as well as the science and technology of design, construction, and implementation of the software and hardware components of modern computing systems and computer-controlled equipment. This includes sustainable energy and electric power, signal and image processing, machine learning, embedded systems, control systems, nanotechnology and integrated circuits, antennas, RF and communication systems, and storage, compression, and transmission of information.
+
+Laboratories are an important part of most undergraduate courses in the electrical and computer engineering program. Use of appropriate laboratory equipment, design tools, and components demonstrates fundamental concepts of the courses and acquaints students with methods and tools they may use after graduation. The department has five teaching laboratories that support courses in electric circuits, electronics, signal processing and control systems, logic design and digital and embedded systems, and RF and communication. In addition, the program has a laboratory dedicated to senior design projects. All laboratories are supported by the facilities of the Engineering Computing Center.
+
+In addition to fulfilling the undergraduate Core Curriculum requirements for a bachelor of science degree in a field of engineering, students majoring in electrical engineering must fulfill the following major requirements and complete a minimum of 190 units. For every required engineering and science course, if an associated laboratory is listed following the course description, then that laboratory is also required to fulfill the major requirements.
+
+English
+
+Mathematics and Natural Science
+
+Engineering
+
+Technical Electives
+
+Five undergraduate ECEN 100-level elective courses are required. One course must be selected from at least four of the following five areas:
+
+Additional electives may be substituted, with the approval of the advisor, including first-year graduate-level electrical engineering coursework. ECEN 188 and 189 may not be used as technical electives.
+
+Professional Development
+
+A professional development experience selected from one of the following options:
+
+In addition to fulfilling the undergraduate Core Curriculum requirements for a bachelor of science degree in  a field of engineering, students majoring in electrical and computer engineering must fulfill the following major requirements and complete a minimum of 190 units. For every required engineering and science course, if an associated laboratory is listed following the course description, then that laboratory is also required to fulfill the major requirements.
+
+English
+
+Mathematics and Natural Science
+
+Engineering
+
+Technical Electives
+
+Three undergraduate ECEN 100-level elective courses approved by an academic advisor are required. At least one must be selected from ECEN 123, 127, 131, 162, 180.  With advisor approval at most one may be selected from CSEN courses. ECEN 188 and 189 may not be used as technical electives.
+
+Additional electives may be substituted, with the approval of the advisor from first-year graduate-level engineering coursework
+
+Professional Development
+
+A professional development experience selected from one of the following options:
+
+Minor in Electrical Engineering
+
+Students must fulfill the following requirements for a minor in electrical engineering:
+
+Minor in Electrical and Computer Engineering
+
+The Department of Electrical and Computer Engineering offers a combined degree program leading to the bachelor of science in either major and a master of science in electrical and computer engineering. This program is open to majors with an approved grade point average in electrical and computer engineering, mathematics, and physics courses. Under the combined degree program, an undergraduate student begins taking courses required for a master’s degree before completing the requirements for the bachelor’s degree and typically completes the requirements for a master of science in electrical and computer engineering within a year of obtaining the bachelor’s degree. Undergraduate students interested in the combined degree program are required to apply for the program between February of their junior year and December of their senior year.
+
+Students in this program will receive their bachelor’s degree after satisfying the full undergraduate degree requirements. To earn the master’s degree, students must fulfill all the requirements for the degree, including the completion of 46 units of coursework beyond that applied to their bachelor’s degree. No course can be used to satisfy requirements for both the bachelor’s degree and the master’s degree. However, completion of 10 or more units of coursework in electrical and computer engineering taken for the master’s degree satisfies the professional development requirement of the undergraduate program.
+
+The program of studies for the master’s degree may include up to 20 units of electrical and computer engineering upper-division elective coursework excluding ECEN 188 and 189. These undergraduate units can count toward a master’s degree only if a grade of “B” or better is earned. Full-time students enrolling in February of their junior year may complete both degrees within five years.
+
+The Electrical and Computer Engineering program is supported by well-equipped laboratories. Some are dedicated solely to lower division courses such as circuits and electronics. In addition, the department has a research and upper division teaching laboratories supporting a wide range of program focus areas..
+
+The Electromagnetics and Communications Laboratory provides a full range of modern RF measurement capabilities up to 22 GHz, including a number of vector network analyzers, spectrum analyzers, and antenna measurement systems. This lab also includes complete production facilities for prototyping printed microwave circuits and antennas. Further, the lab has extensive computer-aided design and simulation capability, including both commercial packages and research-grade in-house solvers. In both research and teaching, connections between physical hardware measurements and computer simulations are stressed.
+
+The Computer Systems Laboratory supports various research projects in hardware-software co-design of digital systems. Examples of target designs include Internet-of-Things (IoTs), wearable devices, wireless sensor networks (WSNs), satellite on-board computers, and neural network (NN) accelerators. Non-functional design concerns such as real-timeness, low-power, thermal behavior, security, or privacy are also important research topics studied in the Computer Systems Laboratory. The lab supports both graduate and undergraduate student research and has the following facilities to support student research: various FPGAs, MPSoC prototyping boards, GPU workstations for NN training, and power monitoring tools.
+
+The IC Design and Technology Laboratory is dedicated to teaching and research topics on electronic materials and devices, integrated circuit design, and IC manufacturing technologies. Current research topics include modeling complex electronic devices using variational methodologies, materials and device characterizations,  fabrication and experimental studies of photovoltaic devices, emission free smart infrastructure, and optimizing energy infrastructure.
+
+The Complex Systems and Control Laboratory provides an experimental environment for students in the area of control system engineering. The lab includes computer-controlled DC motors. These motors provide students with a range of qualitative and quantitative experiments such as inverted pendulum for learning the utility and versatility of feedback in computer-controlled systems. The lab also has a Linux-based workstation with GPUs for simulating brain-inspired architectures using emergent memory nanodevices (memristors and memcapacitors) as synapses for artificial neural networks.
+
+The Latimer Energy Laboratory (LEL) supports a very wide range of activities relating to solar energy, more specifically photovoltaic (PV) and management of renewable energy sources, from K-12 outreach through graduate engineering. The laboratory focuses on two major directions: 1) measurement and characterization of different renewable energy sources; and 2) integration of renewable energy into the electric grid. The lab instrumentation includes pyranometers, VIS-IR spectrometers, metallurgical microscopes, source meters, grid simulator software and related computers.
+
+The Thermal and Electrical Nanoscale Transport (TENT) Laboratory provides teaching and research facilities for modeling, simulation, and characterization of devices and circuits in the nanoscale. Ongoing research topics include silicon heterostructures; thin dielectric;, high-frequency device and circuit parameter extraction; carbon nanostructures used as electrical interconnect and thermal interface materials; and compact modeling of transistors and interconnects for large-scale circuit simulation. This laboratory is located inside NASA Ames Research Center in Moffett Field, California, and was established to conduct, promote, and nurture nanoscale science and technology, interdisciplinary research, and education activities at the University.
+
+The Information Processing and Machine Learning Laboratory  supports research in theoretical algorithm development in digital signal processing, adaptive and nonlinear signal processing, machine learning and deep learning, coding and information theory, private information retrieval, and secure and fault-tolerant distributed computing. Application areas include speech, audio, image and video processing for computer vision, communications, biological testing and diagnostics, artificial intelligence (AI), cloud computing, machine learning in the cloud, distributed storage systems, cache networks, and server-based and peer-to-peer networking.
+
+The Human-Machine Interaction & Innovation () Laboratory supports research in Human-Robot Interaction, Assistive Robotics, Intelligent Systems and Assistive Technologies with a special focus on enhancing human performance. The lab is equipped with several robotic systems, including mobile manipulators and humanoid robots. Additionally, the lab has several wearable sensors, such as electroencephalogram (EEG) and electrocardiogram (ECG), in order to develop AI-based intelligent systems that improve interactions between machines and humans.
+
+Introduction to new frontiers in electrical and computer engineering. Hands-on activities and visits to research and production facilities in Silicon Valley companies to learn how the fundamentals of electrical and computer engineering are enabling new emerging technologies. (2 units)
+
+Boolean functions and their minimization. Combinational circuits: adders, multipliers, multiplexers, decoders. Sequential logic circuits: latches and flip-flops, registers, counters. Memory. Busing. Programmable logic. Use of industry quality CAD tools for schematic capture and HDL in conjunction with FPGAs. Corequisite: ECEN 21L. (4 units)
+
+Laboratory for ECEN 21. Corequisite: ECEN 21. (1 unit)
+
+Transducers. Motors, generators and efficiency. DC and AC circuits. One and three-phase power systems. Sources of electricity. Hydroelectric power, generation, and pumps. Electrical diagrams and schematics. (4 units)
+
+Physical basis and mathematical models of circuit components and energy sources. Circuit theorems and methods of analysis are applied to DC and AC circuits. Prerequisites: Math 13. Corequisite: ECEN 50L, Math 14. (4 units)
+
+Laboratory for ECEN 50. Corequisite: ECEN 50. (1 unit)
+
+Continuation of ECEN 50. Sinusoidal steady state and phasors, transformers, resonance, Laplace analysis, transfer functions. Frequency response analysis. Bode diagrams. Switching circuits. Prerequisite: ECEN 50 with a grade of C- or better, or PHYS 70. Corequisite: ECEN 100L, AMTH 106. (4 units)
+
+Laboratory for ECEN 100. Corequisite: ECEN 100. (1 unit)
+
+Vector analysis and vector calculus. The laws of Coulomb, Lorentz, Faraday, and Gauss. Dielectric and magnetic materials. Energy in electric and magnetic fields. Capacitance and inductance. Maxwell’s equations. Wave equation. Poynting vector. Wave propagation and reflection in transmission lines. Radiation. Prerequisites: PHYS 33 and ECEN 50 with a grade of C- or better. Corequisite: ECEN 104L. (4 units)
+
+Laboratory for ECEN 104. Corequisite: ECEN 104. (1 unit)
+
+In-depth study of several areas of applied electromagnetics such as transmission lines circuits including microstrip and strip lines, Smith Chart and bounce diagram, magnetic circuits, antennas and antenna arrays. Prerequisite: ECEN 104. Corequisite: ECEN 105L. (4 units)
+
+Laboratory for ECEN 105. Corequisite: ECEN 105. (1 unit)
+
+Signals and system modeling. Laplace transform. Transfer function. Convolution. Discrete systems. Frequency analysis. Fourier series and transform. Filtering. State-Space models. Prerequisite: ECEN 100. Corequisite: ECEN 110L. (4 units)
+
+Laboratory for ECEN 110. MATLAB laboratory/problem sessions. Corequisite: ECEN 110. (1 unit)
+
+Approximation and synthesis of active networks. Filter design using positive and negative feedback biquads. Sensitivity analysis. Fundamentals of passive network synthesis. Design project. Prerequisite: ECEN 110. Corequisite: ECEN 112L. (4 units)
+
+Laboratory for ECEN 112. Corequisite: ECEN 112. (1 unit)
+
+Study of basic principles of operation, terminal characteristics, and equivalent circuit models for diodes and transistors. Analysis and design of diode circuits, transistor amplifiers, and inverter circuits. Prerequisite: ECEN 50 with a grade of C- or better. Corequisite: ECEN 115L. (4 units)
+
+Laboratory for ECEN 115. Corequisite: ECEN 115. (1 unit)
+
+Design and analysis of multistage analog amplifiers. Study of differential amplifiers, current mirrors and gain stages. Frequency response of cascaded amplifiers and gain-bandwidth considerations. Concepts of feedback, stability, and frequency compensation. Prerequisite: ECEN 115. Corequisite: ECEN 116L. (4 units)
+
+Laboratory for ECEN 116. Corequisite: ECEN 116. (1 unit)
+
+Design and analysis of BJT and MOSFET analog ICs. Study of analog circuits such as comparators, sample/hold amplifiers, and switched capacitor circuits. Architecture and design of analog to digital and digital to analog converters. Reference and biasing circuits. Study of noise and distortion in analog ICs. Prerequisite: ECEN 116. Corequisite: ECEN 117L. (4 units)
+
+Laboratory for ECEN 117. Corequisite: ECEN 117. (1 unit)
+
+Introduction to algorithms and principles used in circuit simulation packages (such as SPICE). Formulation of equations for linear and nonlinear circuits. Detailed study of the three different types of circuit analysis (AC, DC, and transient). Discussion of computational aspects, including sparse matrices, Newton’s method, numerical integration, and parallel computing. Applications to electronic circuits, active filters, and CMOS digital circuits. Course includes a number of design projects in which simulation software is written in MATLAB and verified using SPICE. Prerequisites: ECEN 21, with a grade of C- or better; ECEN 100 and 115. Corequisite: ECEN 118L. (4 units)
+
+Laboratory for ECEN 118. Corequisite: ECEN 118. (1 unit)
+
+Subjects of current interest. May be taken more than once if topics differ. (4 units)
+
+Design and analysis of microprocessor-based systems. ARM architecture and Assembly Language programming.  Integration of digital and analog input/output devices. Interrupts and Timers, Bus timing analysis, ADC and DAC, Waveform synthesis, Serial communication, Displays. Embedded computing platforms. Prerequisites:  A grade of C- or better in  ECEN 21 and in CSEN 11. Co-requisite: ECEN 120L. (4 units)
+
+Laboratory for ECEN 120. Lab projects based on an embedded computer module to practical applications that reinforce class concepts and provide some opportunities for creative design. Prerequisites : A grade of C- or better in ECEN 21 and CSEN 11. Co-requisite: ECEN 120. (1 unit)
+
+Computing systems that measure, control, and interact. Real-time principles (multitasking, scheduling, synchronization), interfacing sensors, actuators and peripherals, implementation trade-offs, development environments, embedded software (file systems, drivers, libraries, software reuse, concurrency), buffered communications,  Real-time multimedia. Prerequisites: A grade of C- or better in ECEN-120. Co-requisite: ECEN 121L. (4 units)
+
+Laboratory for ECEN 121. Co-requisite: ECEN 121. (1 unit)
+
+Application of logic design concepts to computer architecture. Computation state machines. Computer instruction definition and formatting, the use of opcodes and operands. Memory, and how it is used to store instructions and data. Instruction execution (datapath design) and control transfer. Application of critical path concepts (performance evaluation) and Pipelining and Hazards. Caches and virtual memory. Hardware support for virtual memory. Prerequisites: A grade of C- or better in  ECEN 21. Co-requisite: ECEN 122L. (4 units)
+
+Laboratory for ECEN 122; implementation of simple datapath and its control logic in Verilog . Co-requisite: ECEN 122. (1 unit)
+
+Introduction to behavior, design, and integration of electromechanical components and systems. Review of appropriate electronic components/circuitry, mechanism configurations, and programming constructs. Use and integration of sensors, microcontrollers, and actuators. Also listed as CSEN 123 and MECH 143. Prerequisite: ECEN 50 with a grade of C- or better and CSEN 11. Corequisite: ECEN 123L. (4 units)
+
+Laboratory for ECEN 123. Also listed as CSEN 123L and MECH 143L. Corequisite: ECEN 123. (1 unit)
+
+Contemporary design of finite-state machines as system controllers using FPGA devices. Minimization techniques, performance analysis, and modular system design. HDL simulation and synthesis. Also listed as CSEN 127. Prerequisite: ECEN 21 with a grade of C- or better and CSEN 11. Corequisites: ECEN 127L. (4 units)
+
+Laboratory for ECEN 127. Design, construction, and testing of controllers from verbal specs. Use of CAD design tools. Also listed as CSEN 127L. Corequisite: ECEN 127. (1 unit)
+
+Applications of control systems in engineering. Principle of feedback. Performance specifications: transient and steady-state response. Stability. Design of control systems by frequency and root locus methods. Computer-controlled systems. State-variable feedback design. Also listed as ECEN 230. Prerequisite: ECEN 110. Corequisite: ECEN 130L. (4 units)
+
+Laboratory for ECEN 130. Corequisite: ECEN 130. (1 unit)
+
+Overview of robotic systems and application areas. Kinematic Analysis of Robotic Manipulators. Joint-space trajectory planning. Linear PID control for manipulators. Prerequisite: AMTH 106. Corequisite: ECEN 131L (4 units)
+
+Laboratory for ECEN 131. Laboratory for Robot Programming using Python and Robot Operating System (ROS): Prerequisite: Basic Programming. Corequisite: ECEN 131. (1 unit)
+
+Accessible and Interactive Design. Design of Assistive Technologies. Prototype Development. Data Gathering. Data Analysis, Interpretation, and Representation. Project-based course. Prerequisites: AMTH 108 or equivalent. Also listed as ECEN 532. Corequisite: ECEN 132L. (4 units)
+
+Laboratory for ECEN 132. Corequisite: ECEN 132. (1 unit)
+
+Discrete signals and systems. Difference equations. Convolution summation. Z-transform, transfer function, system response, stability. Model based digital filter design and implementation. Frequency domain analysis. Discrete Fourier transform and FFT. Introduction to adaptive filter design and CNN architectures. Audio, video, and communication applications. Prerequisites: ECEN 110 or both ECEN 50 with a grade of C- or better, and MATH 51. Corequisite: ECEN 133L. (4 units)
+
+Laboratory for ECEN 133. Laboratory for real-time processing. Corequisite: ECEN 133. (1 unit)
+
+Classification models, cross-validation; supervised learning, linear and logistic regression, support vector machines; unsupervised learning, dimensionality reduction methods; tree based methods, and kernel methods, principal component analysis, K-means; reinforcement learning. Includes a significant project component  using Python and other machine learning tools. Prerequisites: AMTH 108, MATH 53. (4 units)
+
+Subjects of current interest. May be taken more than once if topics differ. (4 units)
+
+Review of signals and systems in both time and frequency domain. Review of probability, random variables, and random processes. Analog modulation and demodulation. The impact of noise on analog systems. Digital modulation/demodulation techniques and their performance in the presence of noise.  Prerequisites: ECEN 110 and AMTH 108. Corequisite: ECEN 141L. (4 units)
+
+Laboratory for ECEN 141. Corequisite: ECEN 141. (1 unit)
+
+Networking in different media. Effects of the media on data rate. Error/erasure detection and correction. Routing algorithms. Collision and retransmission in networks. Network coding algorithms. Prerequisite: AMTH 108 with a grade of C- or better; or its equivalent. Co-requisite: ECEN 142L. (4 units)
+
+Laboratory for ECEN 142. Corequisite: ECEN 142. (1 unit)
+
+The fundamental characteristics of passive and active electrical components. Parasitics, models, and measurements. Modeling of circuit interconnects . Study of crosstalk in high-speed digital circuits, matching circuits, power dividers and microwave filters. Prerequisite: ECEN 105. Corequisite: ECEN 144L. (4 units)
+
+Laboratory for ECEN 144. Corequisite: ECEN 144. (1 unit)
+
+Properties of materials, crystal structure, and band structure of solids. Carrier statistics and transport; p-n junction electrostatics, I-V characteristics, equivalent circuits. Metal-semiconductor contacts, Schottky diodes. MOS field-effect transistors, bipolar junction transistors.  This course covers the essential device concepts necessary for analog, digital, and/or mixed signal circuit design. Credit not allowed for both ECEN 151 and ECEN 267. Prerequisite or corequisite: ECEN 104. Corequisite: ECEN 151L. (4 units)
+
+Laboratory for ECEN 151. Corequisite: ECEN 151. (1 unit)
+
+Fundamental principles of processes essential for fabricating micro- and nano-electronic hardware ranging from Integrated circuits, MEMS and biosensors to power, control and optoelectronic devices. Physical and chemical models of semiconductor crystal growth, thermal oxidation and diffusion, ion implantation, Lithography, etching and cleaning, epitaxy, chemical and physical vapor deposition, metallization, etc. Process integration and simulation using TCAD. (4 units).
+
+Also listed as ECEN 276. (4 units)
+
+Laboratory for ECEN 152. Corequisite: ECEN 152. (1 unit)
+
+Introduction to VLSI design and methodology. Study of basic principles, material properties, fabrication, operation, terminal characteristics, and equivalent circuit models for CMOS digital integrated circuits. Study of CMOS combinational and sequential integrated circuits  and technology scaling. Physical design and layout principles. Interconnect modeling. Semiconductor memories. Use of state-of-the-art CAD tools. Prerequisites: ECEN/CSEN 21 and ECEN 50 with a grade of C- or better. Corequisite: ECEN 153L. (4 units)
+
+Laboratory for ECEN 153. Corequisite: ECEN 153. (1 unit)
+
+Introduction to the field of nanoscience and nanotechnology. Properties of nanomaterials and devices. Nanoelectronics: from silicon and beyond. Measurements of nanosystems. Applications and implications. Laboratory experience is an integral part of the course. Also listed as MECH 156. Prerequisites: PHYS 33 and either PHYS 34 or MECH 15. Corequisite: ECEN 156L. (4 units)
+
+Laboratory for ECEN 156. Also listed as MECH 156L. Corequisite: ECEN 156. (1 unit)
+
+This course is an overview of neuromorphic computing based on brain-inspired computing architectures. Traditional neural networks with different network topologies and mem-devices as synapses are studied for various neuromorphic tasks. Prerequisites: ECEN 50 or equivalent, senior standing, and familiarity with Python (or CSEN 11). Corequisite: ECEN 158L. (4 units)
+
+Laboratory for ECEN 158. Corequisite: ECEN 158. (1 unit)
+
+Limitations of science are examined in the framework of nonlinear system theory and metamathematics. Strange attractors, bifurcations, and chaos are studied in some detail. Additional topics include an introduction to formal systems and an overview of Godel’s theorems. The mathematical background developed in the course is used as a basis for exploring the relationship between science, aesthetics, and religion. Particular emphasis is placed on the rationality of faith. Also listed as ECEN 217. Prerequisites: AMTH 106 (or an equivalent course in differential equations), and a basic familiarity with MATLAB. Corequisite: ECEN 160L. (4 units)
+
+Laboratory for ECEN 160. Corequisite: ECEN 160. (1 unit)
+
+Beauty is examined from an interdisciplinary perspective, taking into account insights from mathematics, physics, engineering, neuroscience, and psychology, as well as philosophy, art history, and theology. Technical topics include information theory, quantum computing, fractal geometry, complex systems, cellular automata, Boolean networks, and set theory. Prerequisite: AMTH 106 (or equivalent). Familiarity with basic concepts in probability theory is expected, as is some experience with MATLAB. Corequisite: ECEN 161L. (4 units)
+
+Laboratory for ECEN 161. Corequisite: ECEN 161. (1 unit)
+
+Quantum and parallel computing are explored as paradigms for high performance scientific computing. Particular emphasis is placed on quantum algorithms and graph-theoretic methods for parallelizing the solution of large sparse systems of equations. Since a proper understanding of these topics requires a background in matrix theory, functional analysis, cryptology and number theory, these areas are covered in some detail. Prerequisites: MATH 53 or equivalent, and familiarity with MATLAB. Corequisite: ECEN 162L. (4 units)
+
+Laboratory for ECEN 162. Corequisite: ECEN 162. (1 unit)
+
+Power and efficiency computations, rectifiers, power devices, DC-to-DC converters, AC-to-DC converters, and DC-to-AC inverters. Prerequisite: ECEN 115. Corequisite: ECEN 164L. (4 units)
+
+Laboratory for ECEN 164. Corequisite: ECEN 164. (1 unit)
+
+Overview of medical imaging systems including sensors and electrical interfaces for data acquisition; mathematical models of the relationship of structural and physiological information to sensor measurements, resolution, and accuracy limits; and the conversion process from electronic signals to image synthesis. Analysis of the specification and interaction of the functional units of imaging systems and the expected performance. Focus on MRI, CT, and ultrasound PET, and impedance imaging. Also listed as BIOE 167, BIOE 267. Prerequisite: BIOE 162 or ECEN 110 or MECH 142. (4 units)
+
+Storage hierarchy. Design of memory and storage devices, with a particular emphasis on magnetic disks and storage-class memories. Error detection, correction, and avoidance fundamentals. Disk arrays. Storage interfaces and buses. Network attached and distributed storage, interaction of economy, and technological innovation. Also listed as CSEN 180. Prerequisites: ECEN 21 or CSEN 21, and CSEN 20; CSEN 122 is recommended. (4 units)
+
+Introduction to alternative energy systems with emphasis on those utilizing solar technologies; system analysis including resources, extraction, conversion, efficiency, and end-use; project will design power system for a house off or on grid making best use of renewable energy; system design will include power needs, generation options, storage, back-up power. Prerequisite: ECEN 50. (4 units)
+
+Analysis, design, and optimization of power systems for traditional and renewable power generation. Balanced three phase circuits. Transformers and transmission lines. Also listed at ECEN 281E. Prerequisite: ECEN 100 or equivalent. Corequisite: ECEN 183L. (4 units)
+
+Laboratory for ECEN 183. Corequisite: ECEN 183. (1 unit)
+
+Examine power system stability and power system control, including load frequency control, economic dispatch, and optimal power flow. Also listed as ECEN 231. Prerequisites: ECEN 183 or equivalent. (4 units)
+
+Integration of classroom study and practical experience in a planned program designed to give students practical work experience related to their academic field of study and career objectives. The course alternates (or parallels) periods of classroom study with periods of training in industry or government. Satisfactory completion of the assignment includes preparation of a summary report on co-op activities. P/NP grading. May be taken twice. May not be taken for graduate credit. (2 units)
+
+Credit is given for a technical report on a specific activity such as a design or research project, etc., after completing the co-op assignment. Letter grades based on content and presentation quality of report. May be taken twice. May not be taken for graduate credit. Prerequisite: ECEN 188. Approval of department co-op advisor required. (2 units)
+
+Junior preparation for senior project. An introduction to project requirements and participation in the coordination of the senior conference. Tentative project selection.(Cross-listed with ENGR 197A.) (1unit)
+
+Students will design, implement, and characterize an electronic system. Students will do schematic capture, PCB layout and soldering for a simple consumer application. (1 unit)
+
+Specification of an engineering project, selected with the mutual agreement of the student and the project advisor. Complete initial design with sufficient detail of target specification. Incorporation of relevant engineering standards and appropriate realistic constraints. Initial draft of the project report. Corequisite: ENGL 181. (2 units)
+
+Implementation, construction, and testing of the project, system, or device. Sustainability analysis. Demonstration of project and formal design review. Prerequisite: ECEN 194. (2 units)
+
+Continued design, implementation, and testing of the project, system, or device to improve function and add capability. Reliability analysis. Formal public presentation of results. Final report. Prerequisite: ECEN 195. (1 unit)
+
+Investigation of an approved engineering problem and preparation of a suitable project report. Open only to electrical and computer engineering majors or electrical engineering majors. (1–6 units)
